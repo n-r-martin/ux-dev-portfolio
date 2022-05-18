@@ -1,0 +1,11 @@
+@import "./scss/variables.scss";
+
+.header * {
+  color: $black;
+
+  @include tablet {
+    color: $accent-color;
+  }
+}
+
+

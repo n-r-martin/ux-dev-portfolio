@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import Home from './pages/Home';
-// import About from './pages/About';
+import About from './pages/About';
 // import Blog from './pages/Blog';
 // import Contact from './pages/Contact';
 
@@ -13,20 +13,20 @@ export default function PortfolioContainer() {
     if (currentPage === 'Home') {
       return <Home />;
     }
-    // if (currentPage === 'About') {
-    //   return <About />;
-    // }
+    if (currentPage === 'About') {
+      return <About />;
+    }
     // if (currentPage === 'Blog') {
     //   return <Blog />;
     // }
     // return <Contact />;
   };
 
-//   const handlePageChange = (page) => setCurrentPage(page);
+  const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <div>
-    <Header />
+    <Header handlePageChange={handlePageChange} />
     {renderPage()}
     </div>
   );

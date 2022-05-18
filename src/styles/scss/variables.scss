@@ -1,0 +1,58 @@
+// Light mode colors
+$white: #FFFFFE;
+$off-white: #F5EEDF;
+$black: #222;
+$accent-color: #E99557;
+$grey: #5a5855;
+$soft-black: #292929;
+
+
+// Accent Gradients 
+$gradient-angle-left-right: 135deg;
+$gradient-angle-top-down: 180deg;
+$gradient-angle-top-down-adjusted: 147.5deg;
+$gradient-red: #F25042;
+$gradient-fuschia: #B41CAE;
+
+
+//Box Shadows
+$full-width-shadow-subtle: 0px 1px 3.3px rgba(0, 0, 0, 0.05), 0px 8px 16px rgba(0, 0, 0, 0.1);
+$long-shadow: -10px 10px 0px rgba(0, 0, 0, 1);
+$raised-shadow: -18px 18px 0px $black;
+$short-shadow: -4px 4px 4px rgba(0, 0, 0, 0.4);
+
+
+// Fonts
+$sans-serif: 'Helvetica Neue' , Helvetica , Arial , 'Lucida Grande' , sans-serif;
+$serif-one: 'Frank Ruhl Libre', serif;
+$serif-two: 'Maitree', serif;
+
+//Variables for when header is slid down or up
+//These values must be the same number in + / - values
+$headerHeight: 5rem;
+$headerHide: -5rem;
+
+// Media Queries
+$fontAdjustWidth: "screen and (min-width: 445px)";
+$tabletWidth: "screen and (min-width: 768px)";
+$desktopWidth: "screen and (min-width: 960px)";
+
+
+// Mixins
+@mixin fontAdjust {
+    @media #{$fontAdjustWidth} {
+      @content;
+    }
+  }
+
+@mixin tablet {
+  @media #{$tabletWidth} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{$desktopWidth} {
+    @content;
+  }
+}
