@@ -1,0 +1,635 @@
+html {
+    background-color: $white;
+    overflow-x: hidden;
+}
+
+body {
+    color: $black;
+    padding-top: $headerHeight;
+}
+
+div#header-base {
+    width: 100%;
+    position: absolute;
+    height: $headerHeight;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: $white;
+}
+
+
+/***** HEADER *****/
+
+header {
+    background-color: $white;
+    height: $headerHeight;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5000;
+    transition: height .3s, top .4s ease-in-out, box-shadow .3s;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.header-up {
+    top: $headerHide;
+    border-bottom: 2px solid $black;
+  }
+
+// adjusting header style based on scroll position
+html:not([data-scroll='0']) header.header-down {
+      border-bottom: 2px solid $black;
+      box-shadow: $full-width-shadow-subtle;
+      height: 4rem;
+}
+
+div.header-content-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#name-description-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    transition: left .5s;
+
+    @include tablet {
+        left: 2rem;
+    }
+
+    @include desktop {
+        left: 4rem;
+    }
+}
+
+.header-up div.header-content-container #name-description-container {
+    left: 1.5rem;
+  }
+
+html:not([data-scroll='0']) header.header-down div.header-content-container #name-description-container {
+    @include tablet {
+        left: 1.5rem;
+    } 
+}
+
+
+#desktop-nav {
+    display: none;
+
+    @include desktop {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4rem;
+        transition: right .3s;
+    }
+}
+
+#desktop-nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 32px;
+}
+
+#desktop-nav ul li a {
+    text-decoration: none;
+    padding-bottom: 0;
+    transition: color .2s, padding .2s;
+}
+
+#desktop-nav ul li a:hover {
+    color: $accent-color;
+    border-bottom: 2px solid $accent-color;
+    padding-bottom: 8px;
+}
+
+
+
+/***** MOBILE MENU & NAV STYLES *****/
+
+section#mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    background-color: $off-white;
+    // default display unless toggled on
+    display: none;
+}
+
+#mobile-menu div#mobile-menu-header {
+    background-color: $off-white;
+    margin-bottom: 16px;
+    position: relative;
+    height: $headerHeight;
+    width: 100%;
+}
+
+div#mobile-menu-header i#close-icon {
+    color: $black;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    transition: right .3s;
+    cursor: pointer;
+
+    @include tablet {
+        right: 2rem;
+    }
+}
+
+nav#mobile-nav ul {
+    list-style-type: none;
+    text-align: right;
+    width: 90%;
+    float: right;
+    clear: both;
+    margin-right: 5%;
+
+    @include tablet {
+        right: 2rem;
+    }
+}
+
+#mobile-nav ul li {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+#mobile-nav ul li a {
+    text-decoration: none;
+}
+
+
+#mobile-menu .footer-ui {
+    position: absolute;
+    bottom: 1rem;
+    right: 5%;
+
+    @include tablet {
+        right: 2rem;
+    }    
+}
+
+
+/***** MAIN CONTENT - LANDING SECTION ANF PROJECT CARDS *****/
+
+
+section#landing-section {
+    height: 624px;
+    padding: 2rem 5% 0;
+    position: relative;
+    transition: padding .3s;
+
+    @include tablet {
+        padding: 4rem 2rem 2rem;
+        // height: 524px;
+    }
+
+    @include desktop {
+        padding: 4rem;
+        max-height: 808px;
+    }
+}
+
+div.hero-text-block {
+    padding-bottom: 24px;
+    max-width: 400px;
+    transition: max-width .3s, padding .3s;
+
+    @include tablet {
+        max-width: 640px;  
+    }
+
+    @include desktop {
+        max-width: 800px;
+        padding-bottom: 32px;
+    }
+}
+
+div#work-anchor-point {
+    width: 100%;
+    height: 8px;
+}
+
+
+/***** PROJECT CARD STYLES *****/
+
+section#project-cards {
+    @include tablet {
+        padding: 2rem;
+    }
+
+    @include desktop {
+        padding: 1.5rem 4rem
+    }
+}
+
+article.project-card {
+    background-color: $white;
+    width: 90%;
+    margin: auto;
+    border: solid 2px $black;
+    position: relative;
+    box-shadow: $long-shadow;
+    transition: width .3s, height .3s, box-shadow .3s, transform .3s;
+
+
+    @include tablet {
+        margin: 0;
+    }
+
+    @include desktop {
+        width: 100%;
+        max-width: 1100px;
+        height: 500px;
+    }
+}
+
+article.project-card.raised {
+    box-shadow: $raised-shadow;
+    transform: translate(1%, -1%);
+}
+
+article.project-card:not(:first-of-type) {
+    margin-top: 56px;
+}
+
+.project-card div.card-circle-accent {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient($gradient-angle-top-down, $accent-color, $gradient-red);
+    border: solid 2px $black;
+    z-index: 100;
+  }
+
+  .project-card div.card-circle-shadow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $black;
+    z-index: -1;
+    box-shadow: $long-shadow;
+  }
+
+div.project-card-text-and-ui {
+    position: relative;
+    height: 290px;
+    padding-top: 24px;
+
+    @include tablet {
+        padding-top: 32px;
+    }
+
+    @include desktop {
+        padding-top: 40px;
+        height: 100%;
+        width: 50%;
+        float: right; 
+    }
+}
+
+div.project-card-text-container {
+    width: 90%;
+    margin: auto;
+
+    @include desktop {
+        width: 85%;
+    }
+}
+
+.project-card div.card-bottom-container {
+    height: 50px;
+    width: 100%;
+    border-top: solid 2px $black;
+    position: absolute;
+    bottom: 0;
+}
+
+  /***** Project Roles Marquee per Project Card *****/
+  
+  .role-marquee-container {
+    /* the outer div */
+    
+    position: relative;
+    background-color: $white;
+    width: 65%;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  ul.role-marquee {
+    position: relative;
+    list-style: none;
+    padding-top: 13.5px;
+  }
+  
+  ul.role-marquee.cloned {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  
+  ul.role-marquee li {
+    font-size: 16px;
+    float: left;
+    padding-left: 10px;
+    &::before {
+        content: '\25CF';
+        padding-right: 11px;
+    }
+  }
+
+button {
+    cursor: pointer;
+}
+
+.project-card button {
+    height: 100%;
+    width: 35%;
+    background: $white;
+    color: $black;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    border: none;
+    border-left: solid 2px #000;
+    float: right;
+    position: relative;
+}
+
+a.card-button-link {
+    height: 100%;
+    width: 35%;
+    background-color: $white;
+    color: $black;
+    font-size: 16px;
+    border: none;
+    border-left: solid 2px #000;
+    float: right;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transition: color .2s ease-in-out;
+}
+
+a.card-button-link::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient($gradient-angle-left-right, $accent-color, $gradient-red);
+    z-index: -2;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+article.raised a.card-button-link::before {
+    opacity: 1;
+}
+
+article.raised a.card-button-link {
+    color: $white;
+}
+
+a.card-button-link::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient($gradient-angle-left-right, $gradient-red, $gradient-fuschia);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+a.card-button-link:hover {
+    color: $white;
+}
+
+a.card-button-link:hover::after {
+    opacity: 1;
+}
+
+
+a.card-button-link div.card-button-link-content {
+    padding: 12.5px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+div.card-button-link-content p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    font-weight: 700;
+}
+
+a.card-button-link i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    font-size: 20px;
+}
+
+
+/***** FOOTER *****/
+
+footer {
+   padding: 32px 5% 24px;
+   border-top: solid 2px $black;
+   position: relative;
+   background-color: $white;
+   transition: padding .3s;
+   margin-top: 6rem;
+
+   @include desktop {
+       padding-right: 32px 2.5% 24px;
+       height: 216px;
+   }
+}
+
+div.footer-ui {
+    text-align: right;
+    transition: text-align .3s;
+
+    @include desktop {
+        width: 35%;
+        position: absolute;
+        right: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+div.footer-links-icons {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 24px;
+    gap: 24px;
+    transition: justify-content .3s;
+
+    // // @include tablet {
+    // //     justify-content: flex-start;
+    // // }
+
+    // @include desktop {
+    //     justify-content: flex-end;
+    // }
+}
+
+/***** ABOUT ME PAGE STYLES *****/
+
+section#about-me {
+    margin-top: 2rem;
+
+    @include desktop {
+        height: 100vh;
+        padding: 4rem 0 8rem;
+    }
+}
+
+div#about-me-container {
+    width: 90%;
+    margin: auto;
+
+    @include desktop {
+        width: 1040px;
+        margin-left: 4rem;
+        border: 2px solid $black;
+    }
+}
+
+div#about-me-text-container {
+    padding: 16px 0;
+
+    @include desktop {
+        float: right;
+        width: 57.5%;
+        padding: 16px 32px;
+    }
+}
+
+div#about-me-text-container p {
+    max-width: none;
+}
+
+div#about-me-text-container a#about-me-resume-link {
+    margin-bottom: 2.5rem;
+    display: inline-block;
+    font-size: 18px;
+}
+
+/***** UNDER CONSTRUCTION PAGE STYLES *****/
+
+section#under-construction {
+    height: 500px;
+    position: relative;
+}
+
+div#under-construction-container {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    transform: translateY(-50%);
+}
+
+div#under-construction-container i {
+    font-size: 148px;
+}
+
+div#under-construction-message-container {
+    margin-top: 2rem;
+}
+
+div#under-construction-message-container h3 {
+    margin-bottom: .5rem;
+    display: block;
+}
+
+/***** INTERIOR PROJECT PAGE LAYOUT STYLES *****/
+
+main.project-content {
+    width: 90%;
+    margin: auto;
+    padding-top: 2rem;
+    max-width: 680px;
+    transition: width .3s;
+
+    @include tablet {
+        width: 70%;
+    }
+}
+
+section.project-heading {
+    margin-bottom: 40px;
+}
+
+div.project-role-list-container {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+div.project-role-list-container ul.project-role-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-left: 2px solid;
+    padding-left: 1rem;
+}
+
+div.project-role-list-container ul.project-role-list li {
+    height: 35px;
+    color: #fffffe;
+    background-color: #222;
+    padding: 0.3rem 0.8rem;
+    padding-left: 0.7rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+ul.project-role-list li i {
+    margin-right: 10px;
+}
+
+
+
+
+

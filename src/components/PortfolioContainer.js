@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import '../styles/Index.scss';
 import Header from './Header';
 import Home from './pages/Home';
 import About from './pages/About';
+import UnderConstruction from './pages/UnderConstruction';
 // import Blog from './pages/Blog';
 // import Contact from './pages/Contact';
+
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -16,9 +19,9 @@ export default function PortfolioContainer() {
     if (currentPage === 'About') {
       return <About />;
     }
-    // if (currentPage === 'Blog') {
-    //   return <Blog />;
-    // }
+    if (currentPage === 'UnderConstruction') {
+      return <UnderConstruction />;
+    }
     // return <Contact />;
   };
 

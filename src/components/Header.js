@@ -1,10 +1,42 @@
-import React from 'react';
-// import { FaStream } from 'react-icons/fa';
-import '../styles/Header.scss';
+import React, {useState, useEffect} from "react";
+import $ from 'jquery';
+import Navigation from './Navigation';
+import '../styles/Index.scss';
 
 function Header({ currentPage, handlePageChange }) {
+    const [position, setPosition] = useState(window.pageYOffset);
+    const [visible, setVisible] = useState(true) ;
+
+    const headerHeight = $('header').outerHeight();
+  
+    useEffect(()=> {
+        const handleScroll = () => {
+           let moving = window.pageYOffset
+
+           setVisible(position > moving);
+           setPosition(moving)
+        };
+  
+        window.addEventListener("scroll", handleScroll);
+        
+        return(() => {
+           window.removeEventListener("scroll", handleScroll);
+        })
+    })
+  
+    let headerClass;
+
+    if (position === 0) {
+        headerClass = "header-window-top"
+    }
+    else if (position > headerHeight && !visible) {
+        headerClass = "header-up"
+    } else {
+        headerClass = "header-down"
+    }
+
     return (
-        <header className="header">
+        <header className={headerClass}>
             <div className="header-content-container">
             <div id="name-description-container">
                 <a href="#home"
@@ -14,18 +46,7 @@ function Header({ currentPage, handlePageChange }) {
                 </a>
             </div>
 
-            {/* <FaStream /> */}
-
-            {/* Desktop Menu - visible at larger widths */}
-            <nav id="desktop-nav" className="global-nav-styles">
-                <ul>
-                <li><a href="index.html#work-anchor-point">work</a></li>
-                <li><a href="under-construction.html">play</a></li>
-                <li><a href="#about"
-                       onClick={() => handlePageChange('About')}>about</a></li>
-                <li><a href="assets/nicholasMartin-resume.pdf" target="_blank">r&eacute;sum&eacute;</a></li>
-                </ul>
-            </nav>
+            <Navigation handlePageChange={handlePageChange} />
             </div>
         </header>
     );
