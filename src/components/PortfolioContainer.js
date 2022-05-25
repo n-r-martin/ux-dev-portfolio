@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../styles/Index.scss';
 import Header from './Header';
+import Footer from "./Footer";
 import Home from './pages/Home';
 import About from './pages/About';
 import UnderConstruction from './pages/UnderConstruction';
@@ -31,6 +32,7 @@ export default function PortfolioContainer() {
     <div>
     <Header handlePageChange={handlePageChange} />
     {renderPage()}
+    <Footer />
     </div>
   );
 }

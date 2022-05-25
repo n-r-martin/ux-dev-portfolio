@@ -7,7 +7,8 @@ function Navigation ({currentPage, handlePageChange}) {
             // /* Desktop Menu - visible at larger widths */
             <nav id="desktop-nav" className="global-nav-styles">
                 <ul>
-                <li><a href="#work-anchor-point">work</a></li>
+                <li><a href="#work-anchor-point"
+                       onClick={() => handlePageChange('Home')}>work</a></li>
                 <li><a href="#play"
                        onClick={() => handlePageChange('UnderConstruction')}>play</a></li>
                 <li><a href="#about"
