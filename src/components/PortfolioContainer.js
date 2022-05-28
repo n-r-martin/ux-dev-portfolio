@@ -23,7 +23,6 @@ export default function PortfolioContainer() {
     if (currentPage === 'UnderConstruction') {
       return <UnderConstruction />;
     }
-    // return <Contact />;
   };
 
   const handlePageChange = (page) => setCurrentPage(page);

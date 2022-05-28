@@ -1,0 +1,118 @@
+header div.header-content-container img, div#mobile-menu-header img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    transition: right .3s;
+    cursor: pointer;
+    height: 38px;
+    width: 40px;
+    filter: invert(6%) sepia(7%) saturate(18%) hue-rotate(322deg) brightness(90%) contrast(83%);
+
+    @include tablet {
+        right: 2rem;
+    }
+
+    @include desktop {
+        display: none;
+    }
+}
+
+div#mobile-menu-header img {
+    @include desktop {
+        display: inline-block;
+    }
+}
+
+div#mobile-menu-header img {
+    height: 24px;
+    width: 24px;
+    right: 5.25%
+}
+
+div.project-card-img-container {
+    width: 100%;
+    height: 200px;
+    background: url("../images/marsMap.jpg") no-repeat right top;
+    background-size: cover;
+    filter: saturate(0%) brightness(80%);
+    transition: height .3s;
+    // tied to filter removal animation animation: colorize 3s infinite;
+
+    @include tablet {
+        height: 280px;
+    }
+
+    @include desktop {
+        height: 100%;
+        width: 50%;
+        float: left;
+        border-right: 2px solid $black;
+    }
+}
+
+#about-me-container img {
+    width: 100%;
+    border: 2px solid $black;
+
+    @include desktop {
+        float: left;
+        width: 42.5%;
+        height: 100%;
+        border: none;
+        border-right: 2px solid $black;
+    }
+}
+
+// // adjusting header style based on scroll position
+// html:([data-scroll='0']) header.header-down {
+//     border-bottom: 2px solid $black;
+//     box-shadow: $full-width-shadow;
+// }
+
+// // adjusting header style based on scroll position
+// html:not([data-scroll='0']) header.header-down {
+//     border-bottom: 2px solid $black;
+//     box-shadow: $full-width-shadow;
+// }
+
+// // adjusting header style based on scroll position
+// html:not([data-scroll='0']) header.header-down {
+//     border-bottom: 2px solid $black;
+//     box-shadow: $full-width-shadow;
+// }
+  
+img#diamond-shadow-shape {
+    box-shadow:
+    -4px 4px 4px rgba(51, 51, 51, .2),
+    -8px 8px 8px rgba(51, 51, 51, .2)
+}
+  
+/**** possible animation solution for filter removal on project card images 
+
+@keyframes colorize {
+    0%, 100%  { filter: saturate(0%) brightness(90%); }
+    50% { filter: none; }
+  }
+
+*****/
+
+/***** INTERNAL PROJECT PAGE IMAGE STYLES *****/
+
+div.project-header-img-container {
+    height: 240px;
+    background: url("../images/marsMap.jpg") no-repeat right top;
+    background-size: cover;
+    border: 2px solid $black;
+    transition: height .3s;
+
+    @include desktop {
+        height: 400px;
+    }
+}
+
+ul.project-role-list li img.project-role-icon {
+    width: 30px;
+    margin-right: 8px;
+    filter: invert(100%) sepia(100%) saturate(228%) hue-rotate(6deg) brightness(112%) contrast(107%);
+}
