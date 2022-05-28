@@ -1,17 +1,31 @@
 import React from 'react';
 import '../../styles/Index.scss';
-import jsonData from '../../data/projects.json'
+import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 
 
 function Home() {
-  console.log(jsonData);
+  // Taking the project card data from the imported json file and creating a project card for each entry
+  const projectCards = projectData.map(project => (
+    <ProjectCard 
+      key={project.projectId}
+      title={project.projectTitle} 
+      subHeading={project.projectSubheading}
+      description={project.projectDescription}
+      roles={project.projectRoles} />
+  ))
 
-  const {
-    ProjectTitle = jsonData.projectTitle,
-  } = jsonData;
+  // This is a breakdown of what the above map method is doing
+  // var projectCards = [];
+  // for (var i = 0; i < projectData.length; i++) {
+  //   const {
+  //     ProjectTitle = projectData[i].projectTitle,
+  //   } = projectData;
+  //   // note: we are adding a key prop here to allow react to uniquely identify each
+  //   // element in this array. see: https://reactjs.org/docs/lists-and-keys.html
+  //   projectCards.push(<ProjectCard title={ProjectTitle} key={i} />);
+  // } 
 
-  console.log(ProjectTitle);
 
   return (
     <main>
@@ -32,9 +46,7 @@ function Home() {
     <section id="project-cards">
       {/* Generate cards for as many as that exist where the data is being pulled from */}
       {/* Programatically assign the cards ids */}
-      <ProjectCard title={ProjectTitle}/>
-      <ProjectCard title={ProjectTitle}/>
-      <ProjectCard title={ProjectTitle}/>
+      {projectCards}
       </section>
     </main>
   );

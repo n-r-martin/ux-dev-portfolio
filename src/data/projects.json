@@ -1,3 +1,41 @@
-{
-    "projectTitle": "Ares View"
-}
+[
+    {
+        "projectId": 1,
+        "projectTitle": "Ares View",
+        "projectSubheading": "Interactive Map of Mars",
+        "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
+        "projectRoles": [
+            "UX Analysis",
+            "UX Design",
+            "UI Design",
+            "Development",
+            "DevOps"
+        ]
+    },
+    {
+        "projectId": 2,
+        "projectTitle": "Title Two",
+        "projectSubheading": "Interactive Map of Mars",
+        "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
+        "projectRoles": [
+            "UX Analysis",
+            "UX Design",
+            "UI Design",
+            "Development",
+            "DevOps"
+        ]
+    },
+    {
+        "projectId": 3,
+        "projectTitle": "Title Three",
+        "projectSubheading": "Interactive Map of Mars",
+        "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
+        "projectRoles": [
+            "UX Analysis",
+            "UX Design",
+            "UI Design",
+            "Development",
+            "DevOps"
+        ]
+    }
+]
