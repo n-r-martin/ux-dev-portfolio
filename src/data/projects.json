@@ -19,10 +19,7 @@
         "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
         "projectRoles": [
             "UX Analysis",
-            "UX Design",
-            "UI Design",
-            "Development",
-            "DevOps"
+            "UX Design"
         ]
     },
     {
@@ -31,8 +28,6 @@
         "projectSubheading": "Interactive Map of Mars",
         "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
         "projectRoles": [
-            "UX Analysis",
-            "UX Design",
             "UI Design",
             "Development",
             "DevOps"

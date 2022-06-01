@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { ReactDOM } from 'react';
 import '../../styles/Index.scss';
+import $ from 'jquery';
 import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 
 
-function Home() {
-  // Taking the project card data from the imported json file and creating a project card for each entry
-  const projectCards = projectData.map(project => (
-    <ProjectCard 
-      key={project.projectId}
-      title={project.projectTitle} 
-      subHeading={project.projectSubheading}
-      description={project.projectDescription}
-      roles={project.projectRoles} />
-  ))
+const Home = () => {
+  
+ // Taking the project card data from the imported json file and creating a project card for each entry
+ const projectCards = projectData.map(project => (
+  <ProjectCard
+    key={project.projectId}
+    title={project.projectTitle} 
+    subHeading={project.projectSubheading}
+    description={project.projectDescription}
+    roles={project.projectRoles} />
+))
 
   // This is a breakdown of what the above map method is doing
   // var projectCards = [];
@@ -25,7 +28,6 @@ function Home() {
   //   // element in this array. see: https://reactjs.org/docs/lists-and-keys.html
   //   projectCards.push(<ProjectCard title={ProjectTitle} key={i} />);
   // } 
-
 
   return (
     <main>

@@ -26,8 +26,10 @@ $(document).ready(function () {
   
       //TimelineMax - Depends on GSAP jQuery library - must be in head tag of every HTML page
       var infinite = new TimelineMax({ repeat: -1, paused: true });
-      //Change the value of this variable to adjust marquee speed
-      var time = 15;
+      
+      //Dynamically determine how quickly the list items scroll depending how many items are in the list
+      const listItemCount = $list.find("li").length;
+      var time = listItemCount * 1.5;
   
       infinite
         .fromTo(
