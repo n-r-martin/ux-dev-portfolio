@@ -51,19 +51,34 @@ div.project-card-img-container {
     }
 }
 
-#about-me-container img {
-    width: 100%;
-    border: 2px solid $black;
-
-    @include desktop {
-        float: left;
-        width: 42.5%;
-        height: 100%;
-        border: none;
-        border-right: 2px solid $black;
-    }
+.about-me-bg-graphic {
+    position: absolute;
+    top: 15rem;
+    right: 0;
+    z-index: -1;
+    width: 50%;
 }
 
+.about-me-img-container {
+    position: relative;
+    max-width: 320px;
+    float: left;
+    display: inline-block; 
+}
+
+.about-me-img-container img {
+    width: 100%;
+}
+
+div#color-stripe {
+    height: 32px;
+    width: 274px;
+    background-color: $gradient-red;
+    mix-blend-mode: darken;
+    position: absolute;
+    top: 24px;
+    left: 174px;
+}
 // // adjusting header style based on scroll position
 // html:([data-scroll='0']) header.header-down {
 //     border-bottom: 2px solid $black;

@@ -106,6 +106,12 @@ div.hero-text-block p {
     }    
 }
 
+.hero-text-block.underlined {
+    border-bottom: 1px solid $black;
+    padding-bottom: 0;
+    margin-bottom: 2rem;
+}
+
 .hero-text-block span {
     font-family: $serif-one;
     font-weight: 700;
@@ -154,6 +160,10 @@ div.footer-links-icons i {
 
 /***** ABOUT ME PAGE TYPOGRAPHY STYLES *****/
 
+#about-me-title span {
+    text-transform: lowercase;
+}
+
 #about-me-text-container h3 {
     display: block;
 }
@@ -162,11 +172,9 @@ div.footer-links-icons i {
     padding: 0 0 1rem;
 }
 
-#about-me-text-container span {
-    text-transform: lowercase;
+#about-me-text-container p {
+    margin-bottom: 1rem;
 }
-
-
 
 /***** INTERNAL PROJECT PAGE TYPOGRAPHY STYLES *****/
 

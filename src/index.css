@@ -28,7 +28,7 @@ html, * {
 
 body {
   margin: 0;
- ing: antialiased;
+  padding: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 5rem;
 }

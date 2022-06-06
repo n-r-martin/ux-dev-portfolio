@@ -8,6 +8,10 @@ body {
     padding-top: $headerHeight;
 }
 
+main {
+    min-height: 1000px;
+}
+
 div#header-base {
     width: 100%;
     position: absolute;
@@ -520,7 +524,7 @@ section#about-me {
 
     @include desktop {
         height: 100vh;
-        padding: 4rem 0 8rem;
+        padding: 2rem 0 8rem;
     }
 }
 
@@ -531,7 +535,6 @@ div#about-me-container {
     @include desktop {
         width: 1040px;
         margin-left: 4rem;
-        border: 2px solid $black;
     }
 }
 
@@ -539,9 +542,9 @@ div#about-me-text-container {
     padding: 16px 0;
 
     @include desktop {
-        float: right;
-        width: 57.5%;
-        padding: 16px 32px;
+        float: left;
+        width: 55%;
+        padding: 90px 32px;
     }
 }
 
