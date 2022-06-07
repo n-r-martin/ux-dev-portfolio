@@ -23,6 +23,7 @@ h3 {
 
     @include desktop {
         font-size: 1.375em;
+        margin-top: 0;
     }
 }
 
@@ -59,6 +60,12 @@ a {
 a:hover {
     color: $accent-color;
     transition: color .3s;
+}
+
+p.icon-pairing {
+    text-decoration: underline;
+    font-weight: 700;
+    margin-bottom: 0 !important;
 }
 
 h3 a {

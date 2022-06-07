@@ -552,6 +552,23 @@ div#about-me-text-container p {
     max-width: none;
 }
 
+div.about-me-links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+a.email-link-with-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+
+.email-link-with-icon > * {
+    align-self: center;
+}
+
 div#about-me-text-container a#about-me-resume-link {
     margin-bottom: 2.5rem;
     display: inline-block;

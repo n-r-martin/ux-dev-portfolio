@@ -1,4 +1,6 @@
 import React from 'react';
+import { IconContext } from 'react-icons/lib';
+import { FiSend, FiFileText } from "react-icons/fi";
 import bgGraphic from '../../images/about-me-bg.svg';
 import me from '../../images/nick-martin.jpg';
 
@@ -20,17 +22,25 @@ function About() {
 
 
         <div id="about-me-text-container" className="clearfix">
-          
-
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ullam enim, reprehenderit repellendus adipisci corrupti tenetur officiis magnam aperiam dolorem, quam est perspiciatis quas cum nesciunt atque, amet culpa ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ullam enim, reprehenderit repellendus adipisci corrupti tenetur officiis magnam aperiam dolorem, quam est perspiciatis quas cum nesciunt atque, amet culpa ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           
-          <a id="about-me-resume-link" href="assets/nicholasMartin-resume.pdf" target="_blank">r&eacute;sum&eacute;</a>
+          {/* <a id="about-me-resume-link" href="assets/nicholasMartin-resume.pdf" target="_blank">r&eacute;sum&eacute;</a> */}
 
-          <h3><a href="mailto:hello@nickmartin.design">hello@nickmartin.design</a></h3>
+          <div className='about-me-links'>
+          <IconContext.Provider value={{ className: "anchor-icon-pairing", size: 20 }}>
+            <a className='email-link-with-icon' href="mailto:hello@nickmartin.design">
+              <FiFileText />
+              <p className='icon-pairing'>résumé</p>
+            </a>
 
-          <i className="fa fa-clone" aria-hidden="true"></i>
+            <a className='email-link-with-icon' href="mailto:hello@nickmartin.design">
+              <FiSend />
+              <p className='icon-pairing'>hello@nickmartin.design</p>
+            </a>
+          </IconContext.Provider>
+          </div>
         </div>
       </div>
    
