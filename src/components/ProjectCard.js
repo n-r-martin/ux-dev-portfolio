@@ -1,73 +1,41 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import useIntersection from "../utils/intersectionObserver";
-import $ from 'jquery';
-import '../styles/Index.scss';
-
-
+import Marquee from "react-marquee-slider";
 
 function ProjectCard(props) {
-    // Roles list generation -- animation handled by front-end JS
-    const roleData = props.roles
-
-    const roles = roleData.map((role, index) => (
-      <li key={index} className='listitem'>{role}</li>
-    ))
-
-    // Dupicating list so there are no awkward gaps in the animation, especially when the list contains few items 
-    const roleListDuped = [roles, roles];
+    // Intersection Observer code to programmatically apply and remove rasied class to the respective cards
     
-
-
-
     const ref = useRef();
-    // const cardHeight = ref.current?.clientHeight;
-    // console.log(cardHeight);
+
     const inViewport = useIntersection(ref); // Trigger if 200px is visible from the element
 
-    // if (inViewport) {
-    //     console.log('in viewport:', ref.current);
-    // }
+    const raisedClass = inViewport ? "raised" : ""
 
+    // ///////////////////////////////////
 
-  const raisedClass = inViewport ? "raised" : ""
+    // Roles list items that we feed to the Marquee element
 
+      // Roles list generation -- animation handled by front-end JS
+      const roleData = props.roles
 
-    // /////////////////////////
+      let roles = roleData.map((role, index) => (
+        <li key={index} className='listitem'>{role}</li>
+      ))
 
-    // const [scrollPos, setScrollPos] = useState(window.pageYOffset);
-    // const [isInView, setInView] = useState(false);
+      // Tripling or doubling roles list if role number is low -- this ensures there are no awkward gaps in the animation
+      // Also modifying marquee velocity dpeending on the number of items after replication
+      let marqueeVelocity;
 
-  // useEffect(() => {
-  //     const onScroll = () => {
-
-  //       // console.log(scrollPos);
-        
-        
-
-  //       const cardPos = cardRef.current.getBoundingClientRect().bottom;
-  //       let windowBottom = scrollPos + window.innerHeight;
-
-  //       // console.log(windowBottom);
-  //       // console.log(cardPos);
-
-  //       console.log(scrollPos);
-  
-       
-
-  //       let moving = window.scrollY;
-        
-
-  //       setInView(cardPos === windowBottom);
-  //       setScrollPos(moving);
-  //     };
-  //     window.addEventListener("scroll", onScroll);
-
-  //     return () => window.removeEventListener("scroll", onScroll);
-  // }, [scrollPos, isInView]);
-
-  // const raisedClass = isInView ? "raised" : ""
-
-  // ////////////////////////////
+      if (roles.length <= 2) {
+        roles.push(...roles);
+        roles.push(...roles);
+        marqueeVelocity = 40;
+      } else if (roles.length === 3) {
+        roles.push(...roles)
+        marqueeVelocity = 50;
+      } else {
+        marqueeVelocity = 60;
+      }
 
     return (
         <article ref={ref} id={props.id} className={"project-card " + raisedClass}>
@@ -86,10 +54,10 @@ function ProjectCard(props) {
 
           <div className="card-bottom-container">
             <div className="role-marquee-container">
-                    <ul className="role-marquee">
-                        {roleListDuped}
-                    </ul>
-          </div>
+              <ul className="role-marquee">
+                <Marquee velocity={marqueeVelocity}>{roles}</Marquee>
+              </ul>
+            </div>
 
           <a className="card-button-link" href="project-one.html">
             <div className="card-button-link-content">

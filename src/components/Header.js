@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import $ from 'jquery';
 import Navigation from './Navigation';
-import '../styles/Index.scss';
 
-function Header({ currentPage, handlePageChange }) {
+function Header(props) {
     const [position, setPosition] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
     const [headerHeight, setHeaderHeight] = useState($('header').outerHeight())
@@ -44,15 +44,14 @@ function Header({ currentPage, handlePageChange }) {
     return (
         <header className={headerClass}>
             <div className="header-content-container">
+            <Link to="/">
             <div id="name-description-container">
-                <a href="home"
-                   onClick={() => handlePageChange('Home')}>
                 <h1>Nick Martin</h1>
                 <h2>UX Designer | Developer</h2>
-                </a>
             </div>
+            </Link>
 
-            <Navigation handlePageChange={handlePageChange} />
+            <Navigation />
             </div>
         </header>
     );

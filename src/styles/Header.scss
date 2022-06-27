@@ -1,0 +1,177 @@
+div#header-base {
+    width: 100%;
+    position: absolute;
+    height: $headerHeight;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: $white;
+}
+
+/***** HEADER *****/
+
+header {
+    background-color: $white;
+    height: $headerHeight;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5000;
+    transition: height .3s, top .4s ease-in-out, box-shadow .3s;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.header-up {
+    top: $headerHide;
+    border-bottom: 2px solid $black;
+  }
+
+// adjusting header style based on scroll position
+html:not([data-scroll='0']) header.header-down {
+      border-bottom: 2px solid $black;
+      box-shadow: $full-width-shadow-subtle;
+      height: 4rem;
+}
+
+div.header-content-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#name-description-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    transition: left .5s;
+
+    @include tablet {
+        left: 2rem;
+    }
+
+    @include desktop {
+        left: 4rem;
+    }
+}
+
+.header-up div.header-content-container #name-description-container {
+    left: 1.5rem;
+  }
+
+html:not([data-scroll='0']) header.header-down div.header-content-container #name-description-container {
+    @include tablet {
+        left: 1.5rem;
+    } 
+}
+
+
+#desktop-nav {
+    display: none;
+
+    @include desktop {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4rem;
+        transition: right .3s;
+    }
+}
+
+#desktop-nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 32px;
+}
+
+#desktop-nav ul li a {
+    text-decoration: none;
+    padding-bottom: 0;
+    transition: color .2s, padding .2s;
+}
+
+#desktop-nav ul li a:hover {
+    color: $accent-color;
+    border-bottom: 2px solid $accent-color;
+    padding-bottom: 8px;
+}
+
+
+
+/***** MOBILE MENU & NAV STYLES *****/
+
+section#mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    background-color: $off-white;
+    // default display unless toggled on
+    display: none;
+}
+
+#mobile-menu div#mobile-menu-header {
+    background-color: $off-white;
+    margin-bottom: 16px;
+    position: relative;
+    height: $headerHeight;
+    width: 100%;
+}
+
+div#mobile-menu-header i#close-icon {
+    color: $black;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    transition: right .3s;
+    cursor: pointer;
+
+    @include tablet {
+        right: 2rem;
+    }
+}
+
+nav#mobile-nav ul {
+    list-style-type: none;
+    text-align: right;
+    width: 90%;
+    float: right;
+    clear: both;
+    margin-right: 5%;
+
+    @include tablet {
+        right: 2rem;
+    }
+}
+
+#mobile-nav ul li {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+#mobile-nav ul li a {
+    text-decoration: none;
+}
+
+
+#mobile-menu .footer-ui {
+    position: absolute;
+    bottom: 1rem;
+    right: 5%;
+
+    @include tablet {
+        right: 2rem;
+    }    
+}

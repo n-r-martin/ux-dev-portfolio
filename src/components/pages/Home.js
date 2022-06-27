@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { ReactDOM } from 'react';
-import '../../styles/Index.scss';
-import $ from 'jquery';
+import React, { useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 
-
-const Home = () => {
-  
- // Taking the project card data from the imported json file and creating a project card for each entry
- const projectCards = projectData.map(project => (
+const projectCards = projectData.map(project => (
   <ProjectCard
     key={project.projectId}
     title={project.projectTitle} 
@@ -17,6 +11,38 @@ const Home = () => {
     description={project.projectDescription}
     roles={project.projectRoles} />
 ))
+
+
+const Home = () => {
+  let location = useLocation();
+
+  // fix for clicking to work section from root url or if already on home page
+  const handleScrollToWork = event => {
+    event.preventDefault();
+    let elem = document.getElementById('work');
+    elem.scrollIntoView({behavior: "smooth"})
+  }
+
+  useEffect(()=> {
+    if (location.hash) {
+      let elem = document.getElementById(location.hash.slice(1))
+      if (elem) {
+          elem.scrollIntoView({behavior: "smooth"})
+      }
+    } else {
+      window.scrollTo({top:0,left:0, behavior: "smooth"})
+    } 
+
+    const workLink = document.getElementById('work-link');
+    
+    workLink.addEventListener('click', handleScrollToWork);
+
+    return () => {
+      workLink.removeEventListener("click", handleScrollToWork);
+    };
+}, [location])
+  
+ // Taking the project card data from the imported json file and creating a project card for each entry
 
   // This is a breakdown of what the above map method is doing
   // var projectCards = [];
@@ -42,9 +68,9 @@ const Home = () => {
 
       {/* <i className="fa fa-clone" aria-hidden="true"></i> */}
 
-      <div id="work-anchor-point"></div>
+      
     </section>
-
+    <div id="work"></div>
     <section id="project-cards">
       {/* Generate cards for as many as that exist where the data is being pulled from */}
       {/* Programatically assign the cards ids */}
