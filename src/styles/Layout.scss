@@ -57,7 +57,10 @@ div.header-content-container {
     position: relative;
 }
 
-#name-description-container {
+.logo-name-container {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -65,11 +68,7 @@ div.header-content-container {
     transition: left .5s;
 
     @include tablet {
-        left: 2rem;
-    }
-
-    @include desktop {
-        left: 4rem;
+        left: 1.25rem;
     }
 }
 
@@ -534,7 +533,7 @@ div#about-me-container {
 
     @include desktop {
         width: 1040px;
-        margin-left: 4rem;
+        margin-left: 8rem;
     }
 }
 

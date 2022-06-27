@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import $ from 'jquery';
+import arrowLogo from '../images/arrow-logo.svg'
 import Navigation from './Navigation';
 
 function Header(props) {
@@ -45,12 +46,16 @@ function Header(props) {
         <header className={headerClass}>
             <div className="header-content-container">
             <Link to="/">
-            <div id="name-description-container">
-                <h1>Nick Martin</h1>
-                <h2>UX Designer | Developer</h2>
-            </div>
-            </Link>
-
+            <div className="logo-name-container">
+                <img id='logo-header' src={arrowLogo} alt="logo of arrow piercing through tech stack icon" />
+                <div id="name-description-container">
+                    <h1>Nick Martin</h1>
+                    <h2>UX Designer | Developer</h2>
+                </div>
+            </div> 
+            </Link>   
+           
+            
             <Navigation />
             </div>
         </header>

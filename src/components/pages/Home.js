@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
+import arrowLogo from '../../images/arrow-logo.svg'
+
 
 const projectCards = projectData.map(project => (
   <ProjectCard
@@ -57,6 +59,7 @@ const Home = () => {
 
   return (
     <main>
+      <img className='sword-logo-bg' src={arrowLogo} alt="large background graphic of sword logo" />
     <section id="landing-section">
       <div className="hero-text-block">
         <p>I like to do the <span>design</span> and sometimes other <span>stuff</span> too.</p>

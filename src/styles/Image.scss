@@ -1,21 +1,25 @@
-header div.header-content-container img, div#mobile-menu-header img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 5%;
-    transition: right .3s;
-    cursor: pointer;
-    height: 38px;
-    width: 40px;
-    filter: invert(6%) sepia(7%) saturate(18%) hue-rotate(322deg) brightness(90%) contrast(83%);
+// header div.header-content-container img, div#mobile-menu-header img {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     right: 5%;
+//     transition: right .3s;
+//     cursor: pointer;
+//     height: 38px;
+//     width: 40px;
+//     filter: invert(6%) sepia(7%) saturate(18%) hue-rotate(322deg) brightness(90%) contrast(83%);
 
-    @include tablet {
-        right: 2rem;
-    }
+//     @include tablet {
+//         right: 2rem;
+//     }
 
-    @include desktop {
-        display: none;
-    }
+//     @include desktop {
+//         display: none;
+//     }
+// }
+
+img#logo-header {
+    width: 36px;
 }
 
 div#mobile-menu-header img {
@@ -49,6 +53,15 @@ div.project-card-img-container {
         float: left;
         border-right: 2px solid $black;
     }
+}
+
+.sword-logo-bg {
+    position: absolute;
+    top: 10rem;
+    right: 3rem;
+    z-index: -1;
+    width: 45%;
+    opacity: .03;
 }
 
 .about-me-bg-graphic {
