@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import useIntersection from "../utils/intersectionObserver";
 import Marquee from "react-marquee-slider";
 
@@ -37,6 +38,8 @@ function ProjectCard(props) {
         marqueeVelocity = 60;
       }
 
+      const paramTitle = props.title.replace(/\s/g, "-").toLowerCase();
+
     return (
         <article ref={ref} id={props.id} className={"project-card " + raisedClass}>
         <div className="card-circle-accent"></div>
@@ -59,12 +62,12 @@ function ProjectCard(props) {
               </ul>
             </div>
 
-          <a className="card-button-link" href="project-one.html">
-            <div className="card-button-link-content">
-              <p>View</p>
-              <i className="fa fa-caret-right" aria-hidden="true"></i>
-            </div>
-          </a>
+            <Link className="card-button-link" to={`work/${paramTitle}`}>
+              <div className="card-button-link-content">
+                <p>View</p>
+                <i className="fa fa-caret-right" aria-hidden="true"></i>
+              </div>
+            </Link>
       
           </div>
         </div>

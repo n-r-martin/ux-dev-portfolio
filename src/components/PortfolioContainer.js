@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from "./Footer";
 
 import Home from './pages/Home';
+import Project from "./pages/Project";
 import About from './pages/About';
 import UnderConstruction from './pages/UnderConstruction';
 // import Blog from './pages/Blog';
@@ -46,6 +47,7 @@ export default function PortfolioContainer() {
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home/>} />
+            <Route path="work/:project" element={<Project/>} />
             <Route path="about" element={<About />} />
             <Route path="play" element={<UnderConstruction />} />
           </Routes>
