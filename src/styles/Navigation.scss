@@ -1,0 +1,93 @@
+.navigation-bar {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3.75%;
+    transition: right .2s;
+
+    @include tablet {
+        right: 4rem;
+    }
+}
+
+.navigation-bar ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 32px;
+}
+
+.navigation-bar ul li a {
+    text-decoration: none;
+    padding-bottom: 0;
+    transition: color .2s, padding .2s;
+}
+
+.navigation-bar ul li a:hover {
+    color: $accent-color;
+    border-bottom: 2px solid $accent-color;
+    padding-bottom: 8px;
+}
+
+.mobile-menu-toggle {
+   color: $black;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 3.75%;
+   transition: right .2s;
+   background: none;
+}
+
+
+
+/***** MOBILE MENU & NAV STYLES *****/
+
+.mobile-menu  {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    padding-top: $headerHeight;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    text-align: right;
+    width: 90%;
+    float: right;
+    clear: both;
+    margin-right: 5%;
+
+    @include tablet {
+        right: 2rem;
+    }
+}
+
+.mobile-menu ul li {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+}
+
+
+.mobile-menu .footer-ui {
+    position: absolute;
+    bottom: 1rem;
+    right: 5%;
+
+    @include tablet {
+        right: 2rem;
+    }    
+}

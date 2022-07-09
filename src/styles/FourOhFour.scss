@@ -1,0 +1,95 @@
+// .error-marquee-background {
+//     position: absolute;
+//     z-index: 0;
+//     overflow: hidden;
+// }
+
+ul.error-marquee {
+    list-style-type: none;
+    margin-bottom: 24px;
+}
+
+.error-korean li {
+    margin-right: 24px;
+}
+
+.error-russian li {
+    margin-right: 24px;
+}
+
+.error-japanese li {
+    margin-right: 40px;
+}
+
+.error-english li  {
+    font-size: 256px;
+    margin-right: 40px;
+    font-weight: 900;
+    line-height: 80px;
+}
+
+.error-norwegian li {
+    font-size: 128px;
+    margin-right: 32px;
+    font-weight: 900;
+    line-height: 96px;
+}
+
+
+.error-hindi li {
+    margin-right: 16px;
+}
+
+.error-chinese li {
+    margin-right: 32px;
+}
+
+.error-arabic li {
+    margin-right: 16px;
+}
+
+.error-thai li {
+    margin-right: 24px;
+}
+
+li.red-text {
+    color: $gradient-red;
+}
+
+.error-message-container {
+    height: 400px;
+    width: 720px;
+    background-color: hsla(0, 1%, 16%, .9);
+    // background: linear-gradient($gradient-angle-left-right, hsla(25, 77%, 63%, .95), hsla(5, 87%, 60%, .95));
+    // clip-path: polygon(100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
+    border: 2px solid $white;
+    box-shadow: $long-shadow;
+    position: absolute;
+    top: 12rem;
+    left: 9rem;
+    padding: 2rem;
+    color: $white;
+}
+
+.error-heading{
+    font-size: 128px;
+    font-family: $serif-one;
+    line-height: 1;
+}
+
+.error-body {
+    margin: 2rem 0 4rem;
+    max-width: 560px;
+}
+
+.back-to-home {
+    color: $white;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color .3s;
+}
+
+.back-to-home:hover {
+    color: #aaa;
+}

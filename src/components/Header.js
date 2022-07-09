@@ -1,13 +1,61 @@
 import React, {useState, useEffect} from "react";
+import { Pivot as Hamburger } from 'hamburger-react'
 import { Link } from "react-router-dom";
 import $ from 'jquery';
 import arrowLogo from '../images/arrow-logo.svg'
 import Navigation from './Navigation';
+import MobileNav from "./MobileNav";
 
 function Header(props) {
     const [position, setPosition] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
     const [headerHeight, setHeaderHeight] = useState($('header').outerHeight())
+
+    const [isMobileViewport, setIsMobileViewport] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+
+    // Function to simply close the menu if it is open when any link is clicked -- toggle will sometimes open the menu via a link so we need a simple close.
+    const closeMobileMenu = () => {
+        if (isMobileMenuOpen) {
+            setIsMobileMenuOpen(false);
+        }
+    }
+
+    // Find all the links and assign the closeMobileMenu function, which only fires IF the mobile menu is open.
+    // All the links have to coverted to a "true array" before we can add the event listeners
+    useEffect(() => {
+        const allLinks = document.getElementsByTagName('a');
+        const allLinksArr = Array.prototype.slice.call(allLinks);
+
+        allLinksArr.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        }); 
+        return () => {
+            allLinksArr.forEach(link => {
+               link.removeEventListener('click', closeMobileMenu);
+            });
+        };
+    });
+
+    // Handling the window resize does two things
+    // 1. Dictates whether or not the hamburger menu is shown versus the full navigation
+    // 2. Close the mobile menu IF it's open when the window is resized
+    const handleResize = () => {
+        setIsMobileViewport(window.innerWidth < 768)
+   
+        if (!isMobileViewport && isMobileMenuOpen) {
+           setIsMobileMenuOpen(false);
+        }
+       }
+
+    // Our React hook for managing the eventListener, also calls the handle resize function on initial load
+    useEffect(() => {
+        window.addEventListener("resize", handleResize);
+        handleResize();
+
+        return () => window.removeEventListener("resize", handleResize);
+    })
     
     useEffect(()=> {
         const handleScroll = () => {
@@ -42,7 +90,11 @@ function Header(props) {
         headerClass = "header-down"
     }
 
+    // // const menuOpenedClass = isMobileMenuOpen ? "opened" : "closed";
+    // !isMobileMenuOpen ? console.log('menu was closed') : console.log('menu was opened');
+
     return (
+        <>
         <header className={headerClass}>
             <div className="header-content-container">
             <Link to="/">
@@ -55,10 +107,24 @@ function Header(props) {
             </div> 
             </Link>   
            
-            
-            <Navigation />
+           {isMobileViewport ? 
+                <button className="mobile-menu-toggle">
+                    <Hamburger size={32} duration={0.2} toggled={isMobileMenuOpen} onToggle={setIsMobileMenuOpen} />
+                </button>
+            :
+                <Navigation />
+            } 
             </div>
         </header>
+
+        <div>
+        {isMobileMenuOpen ? (
+            <MobileNav />
+        ) : (
+            null
+        )}
+        </div>
+        </>
     );
 }
 

@@ -4,46 +4,18 @@ import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 import arrowLogo from '../../images/arrow-logo.svg'
 
-
-const projectCards = projectData.map(project => (
+const projectArr = projectData.projects;
+const projectCards = projectArr.map(project => (
   <ProjectCard
     key={project.projectId}
     title={project.projectTitle} 
-    subHeading={project.projectSubheading}
-    description={project.projectDescription}
-    roles={project.projectRoles} />
+    projectHeader={project.projectHeader}
+    projectLink={project.projectPath}
+  />
 ))
 
 
 const Home = () => {
-  let location = useLocation();
-
-  // fix for clicking to work section from root url or if already on home page
-  const handleScrollToWork = event => {
-    event.preventDefault();
-    let elem = document.getElementById('work');
-    elem.scrollIntoView({behavior: "smooth"})
-  }
-
-  useEffect(()=> {
-    if (location.hash) {
-      let elem = document.getElementById(location.hash.slice(1))
-      if (elem) {
-          elem.scrollIntoView({behavior: "smooth"})
-      }
-    } else {
-      window.scrollTo({top:0,left:0, behavior: "smooth"})
-    } 
-
-    const workLink = document.getElementById('work-link');
-    
-    workLink.addEventListener('click', handleScrollToWork);
-
-    return () => {
-      workLink.removeEventListener("click", handleScrollToWork);
-    };
-}, [location])
-  
  // Taking the project card data from the imported json file and creating a project card for each entry
 
   // This is a breakdown of what the above map method is doing
@@ -59,7 +31,7 @@ const Home = () => {
 
   return (
     <main>
-      <img className='sword-logo-bg' src={arrowLogo} alt="large background graphic of sword logo" />
+      <img className='arrow-logo-bg' src={arrowLogo} alt="large background graphic of sword logo" />
     <section id="landing-section">
       <div className="hero-text-block">
         <p>I like to do the <span>design</span> and sometimes other <span>stuff</span> too.</p>

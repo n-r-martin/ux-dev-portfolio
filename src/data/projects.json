@@ -1,36 +1,54 @@
-[
-    {
+{
+   "projects": [{
         "projectId": 1,
         "projectTitle": "Ares View",
-        "projectSubheading": "Interactive Map of Mars",
-        "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
-        "projectRoles": [
-            "UX Analysis",
-            "UX Design",
-            "UI Design",
-            "Development",
-            "DevOps"
-        ]
-    },
+        "projectPath": "ares-view",
+        "projectHeader": {
+            "projectSubheading": "Interactive Map of Mars",
+            "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to deepen our understanding of the 'Red Planet'.",
+            "projectRoles": [
+                "UX Analysis",
+                "UX Design",
+                "UI Design",
+                "Development",
+                "DevOps"
+            ]
+        },
+        "projectBody": {
+            "text": "testing testing testing"
+        }
+    }, 
     {
         "projectId": 2,
         "projectTitle": "Title Two",
-        "projectSubheading": "Interactive Map of Mars",
-        "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
-        "projectRoles": [
-            "UX Analysis",
-            "UX Design"
-        ]
+        "projectPath": "title-two",
+        "projectHeader": {
+            "projectSubheading": "Interactive Map of Mars",
+            "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
+            "projectRoles": [
+                "UX Analysis",
+                "UX Design"
+            ]
+        },
+        "projectBody": {
+            "text": "testing testing testing"
+        }
     },
     {
         "projectId": 3,
         "projectTitle": "Title Three",
-        "projectSubheading": "Interactive Map of Mars",
-        "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
-        "projectRoles": [
+        "projectPath": "title-two",
+        "projectHeader": {
+            "projectSubheading": "Interactive Map of Mars",
+            "projectDescription": "An educational web-based application for learning more about Mars, its geography, and human efforts to better understand our planetary neighbor.",
+            "projectRoles": [
             "UI Design",
             "Development",
             "DevOps"
         ]
-    }
-]
+        },
+        "projectBody": {
+            "text": "testing testing testing"
+        }
+    }]
+}

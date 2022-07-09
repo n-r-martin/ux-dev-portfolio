@@ -20,6 +20,11 @@
 
 img#logo-header {
     width: 36px;
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
 }
 
 div#mobile-menu-header img {
@@ -34,13 +39,21 @@ div#mobile-menu-header img {
     right: 5.25%
 }
 
+.arrow-logo-bg {
+    position: absolute;
+    top: 12rem;
+    right: 3rem;
+    width: 700px;
+    opacity: .03;
+}
+
 div.project-card-img-container {
     width: 100%;
     height: 200px;
     background: url("../images/marsMap.jpg") no-repeat right top;
     background-size: cover;
     filter: saturate(0%) brightness(80%);
-    transition: height .3s;
+    transition: height .3s, filter .3s;
     // tied to filter removal animation animation: colorize 3s infinite;
 
     @include tablet {
@@ -55,29 +68,40 @@ div.project-card-img-container {
     }
 }
 
-.sword-logo-bg {
-    position: absolute;
-    top: 10rem;
-    right: 3rem;
-    z-index: -1;
-    width: 45%;
-    opacity: .03;
+article.raised > div.project-card-img-container {
+    filter: none;
 }
+
 
 .about-me-bg-graphic {
     position: absolute;
     top: 15rem;
     right: 0;
     z-index: -1;
-    width: 50%;
-    opacity: .75;
+    width: 900px;
+    opacity: .25;
+
+    @include desktop {
+        opacity: .75;
+    }
 }
 
 .about-me-img-container {
     position: relative;
-    max-width: 320px;
-    float: left;
+    width: 100%;
+    float: none;
     display: inline-block; 
+
+    @include tablet {
+        width: 320px;
+        float: left;
+        margin-right: 2rem;
+    }
+
+    @include desktop {
+        float: left;
+       
+    }
 }
 
 .about-me-img-container img {
@@ -85,6 +109,7 @@ div.project-card-img-container {
 }
 
 div#color-stripe {
+    display: none;
     height: 32px;
     width: 274px;
     background-color: $gradient-red;
@@ -92,6 +117,10 @@ div#color-stripe {
     position: absolute;
     top: 24px;
     left: 174px;
+
+    @include desktop {
+        display: block;
+    }
 }
 // // adjusting header style based on scroll position
 // html:([data-scroll='0']) header.header-down {
@@ -129,13 +158,13 @@ img#diamond-shadow-shape {
 /***** INTERNAL PROJECT PAGE IMAGE STYLES *****/
 
 div.project-header-img-container {
-    height: 240px;
+    height: 280px;
     background: url("../images/marsMap.jpg") no-repeat right top;
     background-size: cover;
     border: 2px solid $black;
     transition: height .3s;
 
-    @include desktop {
+    @include tablet {
         height: 400px;
     }
 }

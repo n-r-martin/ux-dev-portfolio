@@ -14,10 +14,16 @@ function ProjectCard(props) {
 
     // ///////////////////////////////////
 
+    // Assigned JSON data passed through props to variables
+    const title = props.title;
+    const subHeading = props.projectHeader.projectSubheading;
+    const description = props.projectHeader.projectDescription;
+    const projectLink = props.projectLink
+
     // Roles list items that we feed to the Marquee element
 
       // Roles list generation -- animation handled by front-end JS
-      const roleData = props.roles
+      const roleData = props.projectHeader.projectRoles
 
       let roles = roleData.map((role, index) => (
         <li key={index} className='listitem'>{role}</li>
@@ -38,8 +44,6 @@ function ProjectCard(props) {
         marqueeVelocity = 60;
       }
 
-      const paramTitle = props.title.replace(/\s/g, "-").toLowerCase();
-
     return (
         <article ref={ref} id={props.id} className={"project-card " + raisedClass}>
         <div className="card-circle-accent"></div>
@@ -49,10 +53,10 @@ function ProjectCard(props) {
         <div className="project-card-text-and-ui">
           <div className="project-card-text-container">
 
-            <h4>{props.title}</h4>
-            <h5>{props.subHeading}</h5>
+            <h4>{title}</h4>
+            <h5>{subHeading}</h5>
             
-            <p>{props.description}.</p>
+            <p>{description}</p>
           </div>
 
           <div className="card-bottom-container">
@@ -62,7 +66,7 @@ function ProjectCard(props) {
               </ul>
             </div>
 
-            <Link className="card-button-link" to={`work/${paramTitle}`}>
+            <Link className="card-button-link" to={`work/${projectLink}`}>
               <div className="card-button-link-content">
                 <p>View</p>
                 <i className="fa fa-caret-right" aria-hidden="true"></i>

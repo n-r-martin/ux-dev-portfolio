@@ -62,7 +62,7 @@ a:hover {
     transition: color .3s;
 }
 
-p.icon-pairing {
+span.icon-pairing {
     text-decoration: underline;
     font-weight: 700;
     margin-bottom: 0 !important;
@@ -81,6 +81,10 @@ p {
     @include tablet {
         font-size: 1.125em;
     }
+}
+
+.project-content p {
+    max-width: none;
 }
 
 .card-button-link-content p {
@@ -180,18 +184,14 @@ div.footer-links-icons i {
 }
 
 #about-me-text-container p {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem !important;
 }
 
 /***** INTERNAL PROJECT PAGE TYPOGRAPHY STYLES *****/
 
 .project-header-text-container h4 {
     transition: font-size .3s;
-    font-size: 40px;
-
-    @include tablet {
-        font-size: 56px;
-    }   
+    font-size: 56px;
 }
 
 .project-header-text-container h5 {
@@ -210,7 +210,7 @@ p.project-summary {
 
 .project-main-container p {
     color: $soft-black;
-    margin-bottom: 2em !important;
+    margin-bottom: 2rem !important;
 }
 
 .project-main-container p:first-of-type::first-letter {

@@ -22,7 +22,7 @@ function About() {
 
 
         <div id="about-me-text-container" className="clearfix">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ullam enim, reprehenderit repellendus adipisci corrupti tenetur officiis magnam aperiam dolorem, quam est perspiciatis quas cum nesciunt atque, amet culpa ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <p>Hi! I'm Nick &mdash; a Colorado based creative who believes in ethical applications of technology that inspire and drive continued innovation. I personally believe that designers are pivotal in driving, with intention, the evolution of how we interface with technology, as well as each other as we conitinue to integrate it into our lives. Technology should be first and foremost accessible to all, which means prioritizing usable, scalable patterns that are as engaging as they are approachable.</p>
 
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ullam enim, reprehenderit repellendus adipisci corrupti tenetur officiis magnam aperiam dolorem, quam est perspiciatis quas cum nesciunt atque, amet culpa ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           
@@ -32,12 +32,12 @@ function About() {
           <IconContext.Provider value={{ className: "anchor-icon-pairing", size: 20 }}>
             <a className='email-link-with-icon' href="mailto:hello@nickmartin.design">
               <FiFileText />
-              <p className='icon-pairing'>résumé</p>
+              <span className='icon-pairing'>résumé</span>
             </a>
 
             <a className='email-link-with-icon' href="mailto:hello@nickmartin.design">
               <FiSend />
-              <p className='icon-pairing'>hello@nickmartin.design</p>
+              <span className='icon-pairing'>hello@nickmartin.design</span>
             </a>
           </IconContext.Provider>
           </div>

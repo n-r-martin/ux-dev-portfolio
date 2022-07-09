@@ -10,6 +10,12 @@ body {
 
 main {
     min-height: 1000px;
+    padding-bottom: 6rem;
+}
+
+main.no-padding {
+    min-height: 1000px;
+    padding-bottom: 0;
 }
 
 div#header-base {
@@ -31,7 +37,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 5000;
+    z-index: 10000;
     transition: height .3s, top .4s ease-in-out, box-shadow .3s;
 }
 
@@ -64,7 +70,7 @@ div.header-content-container {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 5%;
+    left: 3.75%;
     transition: left .5s;
 
     @include tablet {
@@ -82,121 +88,12 @@ html:not([data-scroll='0']) header.header-down div.header-content-container #nam
     } 
 }
 
-
-#desktop-nav {
-    display: none;
-
-    @include desktop {
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 4rem;
-        transition: right .3s;
-    }
-}
-
-#desktop-nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 32px;
-}
-
-#desktop-nav ul li a {
-    text-decoration: none;
-    padding-bottom: 0;
-    transition: color .2s, padding .2s;
-}
-
-#desktop-nav ul li a:hover {
-    color: $accent-color;
-    border-bottom: 2px solid $accent-color;
-    padding-bottom: 8px;
-}
-
-
-
-/***** MOBILE MENU & NAV STYLES *****/
-
-section#mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    height: 100%;
-    width: 100%;
-    background-color: $off-white;
-    // default display unless toggled on
-    display: none;
-}
-
-#mobile-menu div#mobile-menu-header {
-    background-color: $off-white;
-    margin-bottom: 16px;
-    position: relative;
-    height: $headerHeight;
-    width: 100%;
-}
-
-div#mobile-menu-header i#close-icon {
-    color: $black;
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 5%;
-    transition: right .3s;
-    cursor: pointer;
-
-    @include tablet {
-        right: 2rem;
-    }
-}
-
-nav#mobile-nav ul {
-    list-style-type: none;
-    text-align: right;
-    width: 90%;
-    float: right;
-    clear: both;
-    margin-right: 5%;
-
-    @include tablet {
-        right: 2rem;
-    }
-}
-
-#mobile-nav ul li {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 2;
-}
-
-#mobile-nav ul li a {
-    text-decoration: none;
-}
-
-
-#mobile-menu .footer-ui {
-    position: absolute;
-    bottom: 1rem;
-    right: 5%;
-
-    @include tablet {
-        right: 2rem;
-    }    
-}
-
-
 /***** MAIN CONTENT - LANDING SECTION ANF PROJECT CARDS *****/
 
 
 section#landing-section {
     height: 624px;
-    padding: 2rem 5% 0;
+    padding: 2rem 3.75% 0;
     position: relative;
     transition: padding .3s;
 
@@ -217,12 +114,12 @@ div.hero-text-block {
     transition: max-width .3s, padding .3s;
 
     @include tablet {
-        max-width: 640px;  
+        max-width: 640px;
+        padding-bottom: 32px;  
     }
 
     @include desktop {
         max-width: 800px;
-        padding-bottom: 32px;
     }
 }
 
@@ -246,7 +143,7 @@ section#project-cards {
 
 article.project-card {
     background-color: $white;
-    width: 90%;
+    width: 92.5%;
     margin: auto;
     border: solid 2px $black;
     position: relative;
@@ -477,7 +374,8 @@ footer {
    position: relative;
    background-color: $white;
    transition: padding .3s;
-   margin-top: 6rem;
+//    margin-top: 6rem;
+   width: 100%;
 
    @include desktop {
        padding-right: 32px 2.5% 24px;
@@ -519,16 +417,15 @@ div.footer-links-icons {
 /***** ABOUT ME PAGE STYLES *****/
 
 section#about-me {
-    margin-top: 2rem;
+    margin: 4rem 0;
 
     @include desktop {
         height: 100vh;
-        padding: 2rem 0 8rem;
     }
 }
 
 div#about-me-container {
-    width: 90%;
+    width: 92.5%;
     margin: auto;
 
     @include desktop {
@@ -538,7 +435,11 @@ div#about-me-container {
 }
 
 div#about-me-text-container {
-    padding: 16px 0;
+    padding: 32px 0;
+
+    @include tablet {
+        padding: 0;
+    }
 
     @include desktop {
         float: left;
@@ -552,10 +453,10 @@ div#about-me-text-container p {
 }
 
 div.about-me-links {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 a.email-link-with-icon {
@@ -604,9 +505,9 @@ div#under-construction-message-container h3 {
 /***** INTERIOR PROJECT PAGE LAYOUT STYLES *****/
 
 main.project-content {
-    width: 90%;
+    width: 92.5%;
     margin: auto;
-    padding-top: 2rem;
+    padding-top: 3rem;
     max-width: 680px;
     transition: width .3s;
 
@@ -620,33 +521,58 @@ section.project-heading {
 }
 
 div.project-role-list-container {
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
+    margin: 1.5rem 0 2.5rem;
+
+
+    // @include tablet {
+    //    margin-bottom: 3.5rem;
+    // }
+   
 }
 
 div.project-role-list-container ul.project-role-list {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    border-left: 2px solid;
-    padding-left: 1rem;
+    position: relative;
+    padding: 0;
+}
+
+.role-list-grident-left {
+    position: absolute;
+    left: 0;
+    z-index: 5000;
+    height: 100%;
+    background: linear-gradient(to right, hsl(60, 100%, 100%), hsla(60, 100%, 100%, 0%)) !important;
+    width: 5%;
+}
+
+.role-list-grident-right {
+    position: absolute;
+    right: 0;
+    z-index: 5000;
+    height: 100%;
+    background: linear-gradient(to left, hsl(60, 100%, 100%), hsla(60, 100%, 100%, 0%)) !important;
+    width: 5%;
+    margin-right: 0 !important;
 }
 
 div.project-role-list-container ul.project-role-list li {
     height: 35px;
-    color: #fffffe;
-    background-color: #222;
-    padding: 0.3rem 0.8rem;
-    padding-left: 0.7rem;
+    font-size: 18px;
+    // font-weight: 500;
+    color: $black;
+    background-color: $white;
+    // padding: 0.3rem 0.8rem;
+    // padding-left: 0.7rem;
     display: flex;
     align-items: center;
-    border-radius: 5px;
+    margin-right: 18px;
+    &::before {
+        content: '\25CF';
+        padding-right: 18px;
+    }
 }
 
-ul.project-role-list li i {
-    margin-right: 10px;
-}
 
 
 
