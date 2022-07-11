@@ -1,10 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { IconContext } from 'react-icons/lib';
-import Marquee from "react-marquee-slider";
-import { FiSend, FiFileText } from "react-icons/fi";
-import bgGraphic from '../../images/about-me-bg.svg';
-import me from '../../images/nick-martin.jpg';
+import Marquee from "react-fast-marquee";
+
 
 
 // Going to have implement database for this
@@ -16,8 +12,6 @@ function AresView(props) {
   const projectTitle = props.title;
   const projectHeader = props.projectHeader;
   const roles = props.roles;
-
-
 
   return (
     <>
@@ -31,7 +25,7 @@ function AresView(props) {
         <div className="project-role-list-container">
           <ul className="project-role-list">
             <span className='role-list-grident-left'></span>
-            <Marquee velocity={40}>
+            <Marquee gradientWidth={10} speed={60}>
             {roles}
             </Marquee>
             <span className='role-list-grident-right'></span>

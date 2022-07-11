@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Pivot as Hamburger } from 'hamburger-react'
 import { Link } from "react-router-dom";
+
 import $ from 'jquery';
 import arrowLogo from '../images/arrow-logo.svg'
 import Navigation from './Navigation';
@@ -38,6 +39,13 @@ function Header(props) {
         };
     });
 
+      if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'scroll'
+    }
+    
+
     // Handling the window resize does two things
     // 1. Dictates whether or not the hamburger menu is shown versus the full navigation
     // 2. Close the mobile menu IF it's open when the window is resized
@@ -67,6 +75,15 @@ function Header(props) {
            setPosition(moving)
            setHeaderHeight(newHeight);
         };
+
+
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'scroll'
+        }
+
+        // isMobileMenuOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
   
         window.addEventListener("scroll", handleScroll);
         
@@ -119,7 +136,7 @@ function Header(props) {
 
         <div>
         {isMobileMenuOpen ? (
-            <MobileNav />
+                <MobileNav />
         ) : (
             null
         )}

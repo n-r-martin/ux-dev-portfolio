@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { IconContext } from "react-icons/lib";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 import useIntersection from "../utils/intersectionObserver";
-import Marquee from "react-marquee-slider";
+import Marquee from "react-fast-marquee";
 
 function ProjectCard(props) {
     // Intersection Observer code to programmatically apply and remove rasied class to the respective cards
@@ -23,26 +25,23 @@ function ProjectCard(props) {
     // Roles list items that we feed to the Marquee element
 
       // Roles list generation -- animation handled by front-end JS
-      const roleData = props.projectHeader.projectRoles
-
-      let roles = roleData.map((role, index) => (
-        <li key={index} className='listitem'>{role}</li>
-      ))
+      const roleData = props.projectHeader.projectRoles;
 
       // Tripling or doubling roles list if role number is low -- this ensures there are no awkward gaps in the animation
       // Also modifying marquee velocity dpeending on the number of items after replication
-      let marqueeVelocity;
+      let marqueeVelocity = roleData.length * 12.5;
 
-      if (roles.length <= 2) {
-        roles.push(...roles);
-        roles.push(...roles);
-        marqueeVelocity = 40;
-      } else if (roles.length === 3) {
-        roles.push(...roles)
-        marqueeVelocity = 50;
-      } else {
-        marqueeVelocity = 60;
+      if (roleData.length <= 2) {
+        roleData.push(...roleData);
+        roleData.push(...roleData);
+      } else if (roleData.length > 2 && roleData.length <= 4) {
+        roleData.push(...roleData);
       }
+
+      // Mapping the potentially duplicated or triplicated roleData to an array of list items to be used in the respective marquees
+      let roles = roleData.map((role, index) => (
+        <li key={index} className='listitem'>{role}</li>
+      ))
 
     return (
         <article ref={ref} id={props.id} className={"project-card " + raisedClass}>
@@ -57,12 +56,27 @@ function ProjectCard(props) {
             <h5>{subHeading}</h5>
             
             <p>{description}</p>
+
+            <ul className="technology-stack">
+              <li>React</li>
+              <li>MongoDB</li>
+              <li>NodeJS</li>
+              <li>Express</li>
+              <li>Leaflet API</li>
+            </ul>
+          </div>
+
+          <div className="external-icons">
+              <IconContext.Provider value={{ className: "mobile-footer-icons", size: 26 }}>
+                <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"><FiGithub /></a>
+                <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"><FiExternalLink /></a>
+              </IconContext.Provider>
           </div>
 
           <div className="card-bottom-container">
             <div className="role-marquee-container">
               <ul className="role-marquee">
-                <Marquee velocity={marqueeVelocity}>{roles}</Marquee>
+                <Marquee gradient={false} speed={marqueeVelocity}>{roles}</Marquee>
               </ul>
             </div>
 

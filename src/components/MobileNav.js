@@ -1,39 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import Resume from '../docs/nicholasMartin-resume.pdf';
+import { IconContext } from "react-icons/lib";
+import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 
-function MobileNav () {
-    const [isMobile, setIsMobile] = useState(false)
-
-    const handleResize = () => {
-     setIsMobile(window.innerWidth < 768)
-    }
-
-    useEffect(() => {
-        window.addEventListener("resize", handleResize);
-
-        handleResize();
-
-        return () => window.removeEventListener("resize", handleResize);
-    })
-    
+function MobileNav () {  
     return (
       <section className="mobile-menu">
           <ul>
-            <li><a href="index.html#work-anchor-point">work</a></li>
-            <li><a href="#">play</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="assets/nicholasMartin-resume.pdf" target="_blank">r&eacute;sum&eacute;</a></li>
+            <li><Link to="work">work</Link></li>
+            <li><Link to='play'>play</Link></li>
+            <li><Link to='about'>about</Link></li>
+            <li><a href={Resume} target="_blank" rel="noreferrer">r&eacute;sum&eacute;</a></li>
           </ul>
 
         
         <div className="footer-ui">
           <h3><a href="mailto:hello@nickmartin.design">hello@nickmartin.design</a></h3>
+
+          <h6 id="contact-number"><a href="tel:720-409-0852">720.409.0852</a></h6>
     
-          <div className="footer-links-icons">
-            <i className="fa fa-github" aria-hidden="true"></i>
-            <i className="fa fa-linkedin" aria-hidden="true"></i>
-            <i className="fa fa-instagram" aria-hidden="true"></i>
-          </div>
+          <IconContext.Provider value={{ className: "mobile-footer-icons", size: 40 }}>
+            <div className="footer-links-icons">
+              <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"> <FiGithub /></a>
+              <a href="https://www.linkedin.com/in/martinnickr/" target="_blank" rel="noreferrer"><FiLinkedin /></a>
+              <a href="https://www.instagram.com/misterrubberburner/" target="_blank" rel="noreferrer"><FiInstagram /></a>
+            </div>
+          </IconContext.Provider>
         </div>
       </section>
     );

@@ -1,6 +1,5 @@
 html {
     background-color: $white;
-    overflow-x: hidden;
 }
 
 body {
@@ -200,14 +199,14 @@ article.project-card:not(:first-of-type) {
 div.project-card-text-and-ui {
     position: relative;
     height: 290px;
-    padding-top: 24px;
+    padding-top: 28px;
 
     @include tablet {
-        padding-top: 32px;
+        padding-top: 36px;
     }
 
     @include desktop {
-        padding-top: 40px;
+        padding-top: 48px;
         height: 100%;
         width: 50%;
         float: right; 
@@ -221,6 +220,28 @@ div.project-card-text-container {
     @include desktop {
         width: 85%;
     }
+}
+
+.technology-stack {
+    list-style-type: none;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+    max-width: 500px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.external-icons {
+    display: flex;
+    position: absolute;
+    gap: 12px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    top: 1rem;
+    right: 1rem;
 }
 
 .project-card div.card-bottom-container {

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
 import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 import arrowLogo from '../../images/arrow-logo.svg'

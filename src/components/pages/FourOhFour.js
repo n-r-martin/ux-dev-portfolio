@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Marquee from "react-marquee-slider";
+import Marquee from "react-fast-marquee";
+import errorEnglish from '../../images/error-images/error-english.svg';
 import errorJapanese from '../../images/error-images/error-japanese.svg';
 import errorRussian from '../../images/error-images/error-russian.svg';
 import errorHindi from '../../images/error-images/error-hindi.svg';
@@ -8,13 +9,15 @@ import errorChinese from '../../images/error-images/error-chinese.svg';
 import errorKorean from '../../images/error-images/error-korean.svg';
 import errorArabic from '../../images/error-images/error-arabic.svg';
 import errorThai from '../../images/error-images/error-thai.svg';
+import errorNorwegian from '../../images/error-images/error-norwegian.svg';
+
 
 function FourOhFour() {
     return (
        <main className='no-padding'>
          <section className='error-marquee-background'>
          <ul className='error-marquee error-korean'>
-          <Marquee velocity={95}>
+          <Marquee gradient={false} speed={80}>
             <li><img src={errorKorean} alt="vector graphic of the word error in korean" /></li>
             <li><img src={errorKorean} alt="vector graphic of the word error in korean" /></li>
             <li><img src={errorKorean} alt="vector graphic of the word error in korean" /></li>
@@ -32,7 +35,7 @@ function FourOhFour() {
           </ul>
 
          <ul className='error-marquee error-russian'>
-          <Marquee velocity={65}>
+          <Marquee gradient={false} speed={100}>
             <li><img src={errorRussian} alt="vector graphic of the word error in russian" /></li>
             <li><img src={errorRussian} alt="vector graphic of the word error in russian" /></li>
             <li><img src={errorRussian} alt="vector graphic of the word error in russian" /></li>
@@ -45,7 +48,7 @@ function FourOhFour() {
           </ul>
 
           <ul className='error-marquee error-japanese'>
-          <Marquee velocity={70}>
+          <Marquee gradient={false} speed={70}>
             <li><img src={errorJapanese} alt="vector graphic of the word error in japanese" /></li>
             <li><img src={errorJapanese} alt="vector graphic of the word error in japanese" /></li>
             <li><img src={errorJapanese} alt="vector graphic of the word error in japanese" /></li>
@@ -58,16 +61,16 @@ function FourOhFour() {
           </ul>
 
           <ul className='error-marquee error-english'>
-          <Marquee velocity={75}>
-            <li>error</li>
-            <li>error</li>
-            <li className='red-text'>error</li>
-            <li>error</li>
+          <Marquee gradient={false} speed={50}>
+            <li><img src={errorEnglish} alt="vector graphic of the word error in english" /></li>
+            <li><img src={errorEnglish} alt="vector graphic of the word error in english" /></li>
+            <li><img className='red-fill' src={errorEnglish} alt="vector graphic of the word error in english" /></li>
+            <li><img src={errorEnglish} alt="vector graphic of the word error in english" /></li>
           </Marquee>
           </ul>
 
           <ul className='error-marquee error-hindi'>
-          <Marquee velocity={110}>
+          <Marquee gradient={false} speed={90}>
             <li><img src={errorHindi} alt="vector graphic of the word error in hindi" /></li>
             <li><img src={errorHindi} alt="vector graphic of the word error in hindi" /></li>
             <li><img src={errorHindi} alt="vector graphic of the word error in hindi" /></li>
@@ -80,7 +83,7 @@ function FourOhFour() {
           </ul>
 
           <ul className='error-marquee error-chinese'>
-          <Marquee velocity={120}>
+          <Marquee gradient={false} speed={60}>
             <li><img src={errorChinese} alt="vector graphic of the word error in chinese" /></li>
             <li><img src={errorChinese} alt="vector graphic of the word error in chinese" /></li>
             <li><img src={errorChinese} alt="vector graphic of the word error in chinese" /></li>
@@ -89,7 +92,7 @@ function FourOhFour() {
           </ul>
 
           <ul className='error-marquee error-arabic'>
-          <Marquee velocity={90} direction={"ltr"}>
+          <Marquee gradient={false} direction={"right"} speed={80}>
             <li><img src={errorArabic} alt="vector graphic of the word error in arabic" /></li>
             <li><img src={errorArabic} alt="vector graphic of the word error in arabic" /></li>
             <li><img src={errorArabic} alt="vector graphic of the word error in arabic" /></li>
@@ -111,7 +114,7 @@ function FourOhFour() {
           </ul>
 
           <ul className='error-marquee error-thai'>
-          <Marquee velocity={90}>
+          <Marquee gradient={false} speed={80}>
             <li><img src={errorThai} alt="vector graphic of the word error in thai" /></li>
             <li><img src={errorThai} alt="vector graphic of the word error in thai" /></li>
             <li><img src={errorThai} alt="vector graphic of the word error in thai" /></li>
@@ -122,24 +125,24 @@ function FourOhFour() {
           </ul>
 
           <ul className='error-marquee error-norwegian'>
-          <Marquee velocity={65}>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
-            <li>feil</li>
+          <Marquee gradient={false} speed={70}>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
+            <li><img src={errorNorwegian} alt="vector graphic of the word error in norwegian" /></li>
           </Marquee>
           </ul>
 
           <ul className='error-marquee error-korean'>
-          <Marquee velocity={95}>
+          <Marquee gradient={false} speed={80}>
             <li><img src={errorKorean} alt="vector graphic of the word error in korean" /></li>
             <li><img src={errorKorean} alt="vector graphic of the word error in korean" /></li>
             <li><img src={errorKorean} alt="vector graphic of the word error in korean" /></li>
@@ -157,7 +160,7 @@ function FourOhFour() {
           </ul>
 
           <ul className='error-marquee error-russian'>
-          <Marquee velocity={65}>
+          <Marquee gradient={false} speed={100}>
             <li><img src={errorRussian} alt="vector graphic of the word error in russian" /></li>
             <li><img src={errorRussian} alt="vector graphic of the word error in russian" /></li>
             <li><img src={errorRussian} alt="vector graphic of the word error in russian" /></li>

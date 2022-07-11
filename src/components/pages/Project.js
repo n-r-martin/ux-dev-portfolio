@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import projectData from '../../data/projects.json'
 
@@ -11,7 +11,7 @@ function Project() {
     let { project }  = useParams();
     let projectStr = project.toString();
 
-    const getProject = projectArr.find(project => project.projectPath == projectStr);
+    const getProject = projectArr.find(project => project.projectPath === projectStr);
 
     let projectTitle = getProject.projectTitle;
     let projectHeader = getProject.projectHeader;
@@ -19,16 +19,16 @@ function Project() {
 
     const roleData = projectHeader.projectRoles;
 
+    if (roleData.length <= 2) {
+      roleData.push(...roleData);
+      roleData.push(...roleData);
+    } else if (roleData.length > 2 && roleData.length <= 4) {
+      roleData.push(...roleData);
+    }
+
     let roles = roleData.map((role, index) => (
       <li key={index} className='listitem'>{role}</li>
     ))
-
-    if (roles.length <= 2) {
-      roles.push(...roles);
-      roles.push(...roles);
-    } else {
-      roles.push(...roles)
-    }
 
     let renderedProject;
 

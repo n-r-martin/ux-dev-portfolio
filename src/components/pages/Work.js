@@ -8,7 +8,7 @@ import me from '../../images/nick-martin.jpg';
 function Work() {
   return (
     <main>
-        it's muh work
+        what to do... what to do...
      </main>
   );
 }

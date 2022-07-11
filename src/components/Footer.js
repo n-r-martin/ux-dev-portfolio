@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from "react";
-import $ from 'jquery';
-import '../styles/Index.scss';
-
+import React from "react";
+import { IconContext } from "react-icons/lib";
+import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 
 function Footer() {
     return (
@@ -14,9 +13,11 @@ function Footer() {
                 <h6 id="contact-number"><a href="tel:720-409-0852">720.409.0852</a></h6>
 
                 <div className="footer-links-icons">
-                    <a href="https://github.com/n-r-martin" target="_blank"><i className="fa fa-github" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/martinnickr/" target="_blank"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/misterrubberburner/" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                <IconContext.Provider value={{ className: "footer-icons", size: 40 }}>
+                    <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"> <FiGithub /></a>
+                    <a href="https://www.linkedin.com/in/martinnickr/" target="_blank" rel="noreferrer"><FiLinkedin /></a>
+                    <a href="https://www.instagram.com/misterrubberburner/" target="_blank" rel="noreferrer"><FiInstagram /></a>
+                </IconContext.Provider>
                 </div>
             </div>
     </footer>
