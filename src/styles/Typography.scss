@@ -58,7 +58,7 @@ a {
 }
 
 a:hover {
-    color: $accent-color;
+    color: $accent-red;
     transition: color .3s;
 }
 
@@ -127,9 +127,12 @@ div.hero-text-block p {
     font-family: $serif-one;
     font-weight: 700;
     color: $black;
-    text-transform: uppercase;
     letter-spacing: normal;
 } 
+
+span.uppercase {
+    text-transform: uppercase;
+}
 
 p#landing-section-intro {
     max-width: 530px;
@@ -162,11 +165,6 @@ i.fa-clone {
     display: none;
 }
 */
-
-div.footer-links-icons i {
-    font-size: 40px;
-}
-
 
 
 /***** ABOUT ME PAGE TYPOGRAPHY STYLES *****/

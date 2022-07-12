@@ -1,0 +1,62 @@
+section#landing-section {
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 95vh;
+    padding: 0px;
+    position: relative;
+}
+
+div.hero-text-block {
+    padding-bottom: 24px;
+    max-width: 400px;
+    transition: max-width .3s, padding .3s;
+
+    @include tablet {
+        max-width: 640px;
+        padding-bottom: 32px;  
+    }
+
+    @include desktop {
+        max-width: 800px;
+        padding-top: 5rem;
+    }
+}
+
+div#work-anchor-point {
+    width: 100%;
+    height: 8px;
+}
+
+.down-arrow-container {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+}
+
+// Say Hello Section
+
+.say-hello-section {
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 95vh;
+    padding: 0px;
+    position: relative;
+    padding-left: 4rem;
+}
+
+.say-hello-graphic {
+    position: absolute;
+    z-index: -10;
+    width: 400px;
+}
+
+.say-hello-text {
+    padding-left: 20rem;
+}

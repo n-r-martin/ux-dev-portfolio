@@ -82,7 +82,7 @@ function ProjectCard(props) {
 
             <Link className="card-button-link" to={`work/${projectLink}`}>
               <div className="card-button-link-content">
-                <p>View</p>
+                <p>Read More</p>
                 <i className="fa fa-caret-right" aria-hidden="true"></i>
               </div>
             </Link>

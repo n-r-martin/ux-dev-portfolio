@@ -2,6 +2,9 @@ import React from 'react';
 import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 import arrowLogo from '../../images/arrow-logo.svg'
+import { IconContext } from 'react-icons/lib';
+import { FiArrowDown } from "react-icons/fi";
+import peaceSign from "../../images/peace-sign.svg"
 
 const projectArr = projectData.projects;
 const projectCards = projectArr.map(project => (
@@ -31,25 +34,48 @@ const Home = () => {
   return (
     <main>
       <img className='arrow-logo-bg' src={arrowLogo} alt="large background graphic of sword logo" />
-    <section id="landing-section">
-      <div className="hero-text-block">
-        <p>I like to do the <span>design</span> and sometimes other <span>stuff</span> too.</p>
-      </div>
+      <section id="landing-section">
+        <div>
+        <div className="hero-text-block">
+          <p>I like to do the <span className='uppercase'>design</span> and sometimes other <span className='uppercase'>stuff</span> too.</p>
+        </div>
 
-      <p id="landing-section-intro">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ullam enim, reprehenderit repellendus adipisci corrupti tenetur officiis magnam aperiam dolorem, quam est perspiciatis quas cum nesciunt atque, amet culpa ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="landing-section-intro">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ullam enim, reprehenderit repellendus adipisci corrupti tenetur officiis magnam aperiam dolorem, quam est perspiciatis quas cum nesciunt atque, amet culpa ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
 
-      <h3><a href="mailto:hello@nickmartin.design">hello@nickmartin.design</a></h3>
+        <div className="down-arrow-container">
+        <IconContext.Provider value={{ className: "mobile-footer-icons", size: 80 }}>
+          <FiArrowDown />
+        </IconContext.Provider>
+        </div>
 
-      {/* <i className="fa fa-clone" aria-hidden="true"></i> */}
+        {/* <i className="fa fa-clone" aria-hidden="true"></i> */}
 
       
-    </section>
+      </section>
     <div id="work"></div>
     <section id="project-cards">
       {/* Generate cards for as many as that exist where the data is being pulled from */}
       {/* Programatically assign the cards ids */}
       {projectCards}
-      </section>
+    </section>
+    <section className='say-hello-section'>
+      <img className='say-hello-graphic' src={peaceSign} alt="graphic element of peace sign" />
+
+      <div className='say-hello-text'>
+        <div className="hero-text-block">
+          <p><span>say hello!</span></p>
+        </div>
+
+        <p id="landing-section-intro">I'm always on the lookout for opportunities to work on exciting new projects with friendly, collborative minds!</p>
+
+        <h3><a href="mailto:hello@nickmartin.design">hello@nickmartin.design</a></h3>
+      </div>
+
+      {/* <i className="fa fa-clone" aria-hidden="true"></i> */}
+
+      
+    </section>
     </main>
   );
 }
