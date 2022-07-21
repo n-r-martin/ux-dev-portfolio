@@ -1,0 +1,81 @@
+section#about-me {
+    min-height: 1060px;
+    background-color: $white;
+    min-height: 95vh;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#about-me-container {
+    width: 92.5%;
+    margin: auto;
+
+    @include desktop {
+        width: 1040px;
+        margin-left: 4rem;
+    }
+}
+
+div#about-me-text-container {
+    padding: 32px 0;
+
+    @include tablet {
+        padding: 0;
+    }
+
+    @include desktop {
+        float: left;
+        width: 47.5%;
+        padding: 90px 32px;
+    }
+}
+
+
+div.about-me-links {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+a.link-with-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+
+.link-with-icon h3 {
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.link-with-icon > * {
+    align-self: center;
+}
+
+div#about-me-text-container a#about-me-resume-link {
+    margin-bottom: 2.5rem;
+    display: inline-block;
+    font-size: 18px;
+}
+
+
+#about-me-title span {
+    text-transform: lowercase;
+}
+
+#about-me-text-container h3 {
+    display: block;
+}
+
+#about-me-container div.hero-text-block {
+    padding: 0 0 1rem;
+}
+
+#about-me-text-container p {
+    margin-bottom: 2rem !important;
+    max-width: none;
+}

@@ -8,11 +8,10 @@ body {
 }
 
 main {
-    min-height: 1000px;
-    padding-bottom: 6rem;
+    min-height: 800px;
 
     @include desktop {
-        padding: 0 4rem 6rem;
+        padding: 0 4rem;
     }
 }
 
@@ -31,126 +30,6 @@ div#header-base {
     background-color: $white;
 }
 
-
-/***** HEADER *****/
-
-header {
-    background-color: $white;
-    height: $headerHeight;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10000;
-    transition: height .3s, top .4s ease-in-out, box-shadow .3s;
-}
-
-header a {
-    text-decoration: none;
-}
-
-.header-up {
-    top: $headerHide;
-    border-bottom: 2px solid $black;
-  }
-
-// adjusting header style based on scroll position
-html:not([data-scroll='0']) header.header-down {
-      border-bottom: 2px solid $black;
-      box-shadow: $full-width-shadow-subtle;
-      height: 4rem;
-}
-
-div.header-content-container {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-.logo-name-container {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 3.75%;
-    transition: left .5s;
-
-    @include tablet {
-        left: 1rem;
-    }
-}
-
-.header-up div.header-content-container #name-description-container {
-    left: 1.5rem;
-  }
-
-html:not([data-scroll='0']) header.header-down div.header-content-container #name-description-container {
-    @include tablet {
-        left: 1.5rem;
-    } 
-}
-
-/***** ABOUT ME PAGE STYLES *****/
-
-section#about-me {
-    margin: 4rem 0;
-
-    @include desktop {
-        height: 100vh;
-    }
-}
-
-div#about-me-container {
-    width: 92.5%;
-    margin: auto;
-
-    @include desktop {
-        width: 1040px;
-        margin-left: 8rem;
-    }
-}
-
-div#about-me-text-container {
-    padding: 32px 0;
-
-    @include tablet {
-        padding: 0;
-    }
-
-    @include desktop {
-        float: left;
-        width: 47.5%;
-        padding: 90px 32px;
-    }
-}
-
-div#about-me-text-container p {
-    max-width: none;
-}
-
-div.about-me-links {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-a.email-link-with-icon {
-    display: flex;
-    flex-direction: row;
-    gap: 9px;
-}
-
-.email-link-with-icon > * {
-    align-self: center;
-}
-
-div#about-me-text-container a#about-me-resume-link {
-    margin-bottom: 2.5rem;
-    display: inline-block;
-    font-size: 18px;
-}
 
 /***** UNDER CONSTRUCTION PAGE STYLES *****/
 
@@ -184,12 +63,12 @@ div#under-construction-message-container h3 {
 main.project-content {
     width: 92.5%;
     margin: auto;
-    padding-top: 3rem;
+    padding: 3rem 0;
     max-width: 680px;
     transition: width .3s;
 
     @include tablet {
-        width: 70%;
+        width: 80%;
     }
 }
 
@@ -248,6 +127,16 @@ div.project-role-list-container ul.project-role-list li {
         content: '\25CF';
         padding-right: 18px;
     }
+}
+
+.color-bottom {
+    height: 10vh;
+    width: 100%;
+    background-color: $accent-red;
+    position: absolute;
+    left: 0;
+    box-shadow: inset 0px 24px 16px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid $black;
 }
 
 

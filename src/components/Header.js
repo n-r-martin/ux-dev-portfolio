@@ -3,7 +3,6 @@ import { Pivot as Hamburger } from 'hamburger-react'
 import { Link } from "react-router-dom";
 
 import $ from 'jquery';
-import arrowLogo from '../images/arrow-logo.svg'
 import Navigation from './Navigation';
 import MobileNav from "./MobileNav";
 
@@ -115,8 +114,7 @@ function Header(props) {
         <header className={headerClass}>
             <div className="header-content-container">
             <Link to="/">
-            <div className="logo-name-container">
-                <img id='logo-header' src={arrowLogo} alt="logo of arrow piercing through tech stack icon" />
+            <div className="name-container">
                 <div id="name-description-container">
                     <h1>Nick Martin</h1>
                     <h2>UX Designer | Developer</h2>

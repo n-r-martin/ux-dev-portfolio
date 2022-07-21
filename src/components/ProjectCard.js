@@ -18,6 +18,7 @@ function ProjectCard(props) {
 
     // Assigned JSON data passed through props to variables
     const title = props.title;
+    const projectImg = props.projectHeader.headerImgUrl;
     const subHeading = props.projectHeader.projectSubheading;
     const description = props.projectHeader.projectDescription;
     const projectLink = props.projectLink
@@ -47,7 +48,8 @@ function ProjectCard(props) {
         <article ref={ref} id={props.id} className={"project-card " + raisedClass}>
         <div className="card-circle-accent"></div>
         <div className="card-circle-shadow"></div>
-        <div className="project-card-img-container"></div>  
+        {/* style={{backgroundImage: 'url(' + require('./images/sword.png') + ')'}} */}
+        <div className="project-card-img-container"  style={{ backgroundImage: `url("images${projectImg}")` }}></div>  
 
         <div className="project-card-text-and-ui">
           <div className="project-card-text-container">
