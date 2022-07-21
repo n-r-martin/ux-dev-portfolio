@@ -1,0 +1,158 @@
+section#landing-section {
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 95vh;
+    padding: 0px;
+    position: sticky;
+    top: 2rem;
+    z-index: -10;
+}
+
+div.hero-text-block {
+    padding-bottom: 24px;
+    max-width: 400px;
+    transition: max-width .3s, padding .3s;
+
+    @include tablet {
+        max-width: 640px;
+        padding-bottom: 32px;  
+    }
+
+    @include desktop {
+        max-width: 1200px;
+        padding-top: 5rem;
+    }
+}
+
+div.hero-text-first-row {
+   display: flex;
+   flex-direction: row;
+    gap: 24px;
+}
+
+div.glitch-text-container {
+    display: inline-block;
+    position: relative;
+}
+
+ div.glitch {
+    position: absolute;
+    visibility: hidden;
+}
+
+.glitch.visible {
+    visibility: visible;
+}
+
+// div.design {
+//     visibility: hidden;
+//     animation: showDesign 2s infinite;
+// }
+
+// @keyframes showDesign {
+//     from {visibility: hidden;}
+//     to {visibility: visible;}
+//   }
+
+div#work-anchor-point {
+    width: 100%;
+    height: 8px;
+}
+
+.down-arrow-container {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+}
+
+// Say Hello Section
+
+.say-hello-section {
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 95vh;
+    padding: 0px;
+    position: relative;
+    padding-left: 8rem;
+    background-color: $white;
+}
+
+.say-hello-text {
+    position: relative;
+}
+
+.say-hello-text > .hero-text-block {
+    padding: 0;
+    display: inline-block;
+}
+
+.say-hello-text > .hero-text-block p {
+    display: inline;
+}
+
+.say-hello-text > .hero-text-block img {
+    width: 10%;
+    margin-left: .75rem;
+}
+
+.say-hello-graphic {
+    width: 600px;
+    position: absolute;
+    left: -18.5rem;
+    top: 5rem;
+    z-index: -10;
+    opacity: .03;
+}
+
+
+.landing-graphic-outer-container {
+    position: absolute;
+    width: 900px;
+    height: 1400px;
+    overflow: hidden;
+    right: 0;
+}
+
+.landing-graphic-inner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.cyberpunk-wheel {
+    position: absolute;
+    top: -5rem;
+    right: -35rem;
+    width: 1400px;
+    -webkit-animation:spin 40s linear infinite;
+    -moz-animation:spin 40s linear infinite;
+    animation:spin 40s linear infinite;
+    opacity: .7;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+.target-graphic {
+    width: 27.5%;
+    position: absolute;
+    top: 32.5rem;
+    left: 7.5rem;
+}

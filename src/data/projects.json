@@ -12,7 +12,8 @@
                 "UI Design",
                 "Development",
                 "DevOps"
-            ]
+            ],
+            "headerImgUrl": "/marsMap.jpg"
         },
         "projectBody": {
             "text": "testing testing testing"
@@ -28,7 +29,8 @@
             "projectRoles": [
                 "UX Analysis",
                 "UX Design"
-            ]
+            ],
+            "headerImgUrl": "/marsMap.jpg"
         },
         "projectBody": {
             "text": "testing testing testing"
@@ -45,7 +47,8 @@
             "UI Design",
             "Development",
             "DevOps"
-        ]
+            ],
+        "headerImgUrl": "/marsMap.jpg"
         },
         "projectBody": {
             "text": "testing testing testing"

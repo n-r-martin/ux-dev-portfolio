@@ -58,7 +58,7 @@ a {
 }
 
 a:hover {
-    color: $accent-color;
+    color: $accent-red;
     transition: color .3s;
 }
 
@@ -94,7 +94,7 @@ p {
 
 /***** HERO TEXT BLOCK *****/
 
-div.hero-text-block p {
+div.hero-text-block span {
     font-family: $serif-two;
     font-weight: 200;
     letter-spacing: -2px;
@@ -117,19 +117,29 @@ div.hero-text-block p {
     }    
 }
 
+
 .hero-text-block.underlined {
     border-bottom: 1px solid $black;
     padding-bottom: 0;
     margin-bottom: 2rem;
 }
 
-.hero-text-block span {
+.hero-text-block span.bold {
     font-family: $serif-one;
     font-weight: 700;
     color: $black;
-    text-transform: uppercase;
     letter-spacing: normal;
 } 
+
+.hero-text-block span.large {
+    font-size: 1.6em;
+    line-height: 1;
+} 
+
+
+span.uppercase {
+    text-transform: uppercase;
+}
 
 p#landing-section-intro {
     max-width: 530px;
@@ -162,30 +172,6 @@ i.fa-clone {
     display: none;
 }
 */
-
-div.footer-links-icons i {
-    font-size: 40px;
-}
-
-
-
-/***** ABOUT ME PAGE TYPOGRAPHY STYLES *****/
-
-#about-me-title span {
-    text-transform: lowercase;
-}
-
-#about-me-text-container h3 {
-    display: block;
-}
-
-#about-me-container div.hero-text-block {
-    padding: 0 0 1rem;
-}
-
-#about-me-text-container p {
-    margin-bottom: 2rem !important;
-}
 
 /***** INTERNAL PROJECT PAGE TYPOGRAPHY STYLES *****/
 

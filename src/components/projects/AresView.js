@@ -11,6 +11,7 @@ import Marquee from "react-fast-marquee";
 function AresView(props) {
   const projectTitle = props.title;
   const projectHeader = props.projectHeader;
+  const projectImg = projectHeader.headerImgUrl;
   const roles = props.roles;
 
   return (
@@ -33,7 +34,7 @@ function AresView(props) {
         </div>
       </div>
 
-      <div className="project-header-img-container"></div>  
+      <div className="project-header-img-container" style={{ backgroundImage: `url("../images${projectImg}")` }} ></div>  
     </section>
 
     <section className="project-main-container">

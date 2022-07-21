@@ -16,7 +16,7 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 5000;
+    z-index: 10000;
     transition: height .3s, top .4s ease-in-out, box-shadow .3s;
 }
 
@@ -98,8 +98,8 @@ html:not([data-scroll='0']) header.header-down div.header-content-container #nam
 }
 
 #desktop-nav ul li a:hover {
-    color: $accent-color;
-    border-bottom: 2px solid $accent-color;
+    color: $accent-red;
+    border-bottom: 2px solid $accent-red;
     padding-bottom: 8px;
 }
 

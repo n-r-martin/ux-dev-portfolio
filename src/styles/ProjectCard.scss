@@ -1,0 +1,250 @@
+section#project-cards {
+    padding-bottom: 10rem;
+    background-color: $white;
+}
+
+article.project-card {
+    background-color: $white;
+    width: 92.5%;
+    margin: auto;
+    border: solid 2px $black;
+    position: relative;
+    box-shadow: $long-shadow;
+    transition: width .3s, height .3s, box-shadow .3s, transform .3s;
+
+
+    @include tablet {
+        margin: 0;
+    }
+
+    @include desktop {
+        width: 100%;
+        max-width: 1100px;
+        height: 500px;
+    }
+}
+
+article.project-card.raised {
+    box-shadow: $raised-shadow;
+    transform: translate(1%, -1%);
+}
+
+article.project-card:not(:first-of-type) {
+    margin-top: 56px;
+}
+
+.project-card div.card-circle-accent {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent-red;
+    border: solid 2px $black;
+    z-index: 100;
+  }
+
+  .project-card div.card-circle-shadow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $black;
+    z-index: -1;
+    box-shadow: $long-shadow;
+  }
+
+div.project-card-text-and-ui {
+    position: relative;
+    height: 290px;
+    padding-top: 28px;
+
+    @include tablet {
+        padding-top: 36px;
+    }
+
+    @include desktop {
+        padding-top: 48px;
+        height: 100%;
+        width: 50%;
+        float: right; 
+    }
+}
+
+div.project-card-text-container {
+    width: 90%;
+    margin: auto;
+
+    @include desktop {
+        width: 85%;
+    }
+}
+
+.technology-stack {
+    list-style-type: none;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+    max-width: 500px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.external-icons {
+    display: flex;
+    position: absolute;
+    gap: 12px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    top: 1rem;
+    right: 1rem;
+}
+
+.project-card div.card-bottom-container {
+    height: 50px;
+    width: 100%;
+    border-top: solid 2px $black;
+    position: absolute;
+    bottom: 0;
+}
+
+  /***** Project Roles Marquee per Project Card *****/
+  
+  .role-marquee-container {
+    /* the outer div */
+    
+    position: relative;
+    background-color: $white;
+    width: 65%;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  ul.role-marquee {
+    position: relative;
+    list-style: none;
+    padding-top: 13.5px;
+  }
+  
+  ul.role-marquee.cloned {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  
+  ul.role-marquee li {
+    font-size: 16px;
+    float: left;
+    padding-left: 10px;
+    &::before {
+        content: '\25CF';
+        padding-right: 11px;
+    }
+  }
+
+button {
+    cursor: pointer;
+}
+
+.project-card button {
+    height: 100%;
+    width: 35%;
+    background: $white;
+    color: $black;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    border: none;
+    border-left: solid 2px #000;
+    float: right;
+    position: relative;
+}
+
+a.card-button-link {
+    height: 100%;
+    width: 35%;
+    background-color: $white;
+    color: $black;
+    font-size: 16px;
+    border: none;
+    border-left: solid 2px #000;
+    float: right;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transition: color .2s ease-in-out;
+}
+
+a.card-button-link::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $accent-red;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+article.raised a.card-button-link::before {
+    opacity: 1;
+}
+
+article.raised a.card-button-link {
+    color: $white;
+}
+
+a.card-button-link::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient($gradient-angle-left-right, $accent-red, $accent-fuschia);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+a.card-button-link:hover {
+    color: $white;
+}
+
+a.card-button-link:hover::after {
+    opacity: 1;
+}
+
+
+a.card-button-link div.card-button-link-content {
+    padding: 12.5px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+div.card-button-link-content p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    font-weight: 700;
+}
+
+a.card-button-link i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    font-size: 20px;
+}

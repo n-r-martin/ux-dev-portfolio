@@ -2,22 +2,21 @@
 
 // Light mode colors
 $white: #FFFFFE;
-$off-white: #F5EEDF;
-$black: #222;
-$accent-color: #E99557;
+$off-white: #FCF6EE;
 $grey: #5a5855;
+$soft-grey: #F9F5F1;
+$black: #222;
 $soft-black: #292929;
-
+$accent-red: #E86258;
+$accent-gold: #d99230;
+$accent-fuschia: #B41CAE;
 
 // Accent Gradients 
 $gradient-angle-left-right: 135deg;
 $gradient-angle-top-down: 180deg;
 $gradient-angle-top-down-adjusted: 147.5deg;
-$gradient-red: #F25042;
-$gradient-fuschia: #B41CAE;
 
-$accent-color-transparent: 	hsla(25, 77%, 63%, 0);
-
+$black-transparent: 	hsla(25, 77%, 63%, 0);
 
 //Box Shadows
 $full-width-shadow-subtle: 0px 1px 3.3px rgba(0, 0, 0, 0.05), 0px 8px 16px rgba(0, 0, 0, 0.1);

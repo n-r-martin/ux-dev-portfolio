@@ -9,7 +9,6 @@ function MobileNav () {
       <section className="mobile-menu">
           <ul>
             <li><Link to="work">work</Link></li>
-            <li><Link to='play'>play</Link></li>
             <li><Link to='about'>about</Link></li>
             <li><a href={Resume} target="_blank" rel="noreferrer">r&eacute;sum&eacute;</a></li>
           </ul>
