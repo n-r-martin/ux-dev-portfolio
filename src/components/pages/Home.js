@@ -84,7 +84,7 @@ useEffect(() => {
             :
             <DesktopGraphic />
           } 
-      <section id="landing-section">
+      {/* <section id="landing-section">
         <div>
           <div className="hero-text-block">
             <div className='hero-text-first-row'>
@@ -115,10 +115,29 @@ useEffect(() => {
           <FiArrowDown />
         </IconContext.Provider>
         </div>
+      </section> */}
 
-        {/* <i className="fa fa-clone" aria-hidden="true"></i> */}
-        
-      
+      <section id="landing-section">
+          <div className='superhero-text-block'>
+            <h1>Nick</h1>
+            <h1>Martin</h1>
+            {/* <span className='bold uppercase'>Nick</span>
+            <span className='bold uppercase'>Martin</span> */}
+          </div>
+
+          <div className='landing-bottom'>
+
+
+          </div>
+
+
+
+
+        {/* <div className="down-arrow-container">
+        <IconContext.Provider value={{ className: "mobile-footer-icons", size: 80 }}>
+          <FiArrowDown />
+        </IconContext.Provider>
+        </div> */}
       </section>
      
       <section id="project-cards">

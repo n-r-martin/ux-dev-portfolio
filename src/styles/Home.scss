@@ -7,10 +7,10 @@ section#landing-section {
     justify-content: space-between;
     gap: 40px;
     min-height: 95vh;
-    padding: 3rem 0;
+    // padding: 3rem 0;
     position: sticky;
-    top: 3rem;
-    z-index: -10;
+    // top: 3rem;
+    // z-index: -10;
 
     @include tablet {
         padding: 4rem 0;
@@ -19,6 +19,13 @@ section#landing-section {
     @include desktop {
         padding: 0;
     }
+}
+
+
+div.landing-bottom {
+    height: 200px;
+    width: 100%;
+    background-color: $accent-red;
 }
 
 div.hero-text-block {
