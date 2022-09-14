@@ -1,11 +1,20 @@
 section#project-cards {
-    padding-bottom: 10rem;
-    background-color: $white;
+    padding: 4rem 0 20rem;
+    position: relative;
+
+    @include desktop {
+        padding: 10rem 0 20rem;
+    }
+}
+
+div#work {
+    position: absolute;
+    top: -5rem;
 }
 
 article.project-card {
     background-color: $white;
-    width: 92.5%;
+    width: 100%;
     margin: auto;
     border: solid 2px $black;
     position: relative;
@@ -15,6 +24,7 @@ article.project-card {
 
     @include tablet {
         margin: 0;
+        max-width: 800px;
     }
 
     @include desktop {
@@ -61,11 +71,12 @@ article.project-card:not(:first-of-type) {
 
 div.project-card-text-and-ui {
     position: relative;
-    height: 290px;
+    height: 416px;
     padding-top: 28px;
 
     @include tablet {
         padding-top: 36px;
+        height: 440px;
     }
 
     @include desktop {
@@ -87,14 +98,28 @@ div.project-card-text-container {
 
 .technology-stack {
     list-style-type: none;
-    margin-top: 2.5rem;
+    margin: 2.5rem 0;
     display: flex;
     flex-direction: row;
-    gap: 10px 20px;
+    gap: 4px 8px;
     flex-wrap: wrap;
     max-width: 500px;
     font-weight: 500;
     font-size: 16px;
+}
+
+.technology-stack li {
+    // border: 2px solid $soft-black;
+    border-radius: 5px;
+    padding: 6px 8px 6px 6px;
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    // background-color: $soft-grey;
+    color: $grey;
+    font-size: 14px;
 }
 
 .external-icons {

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "../utils/scrollToTop";
 import Header from './Header';
 import Footer from "./Footer";
+import MediaLinks from "./MediaLinks";
 
 import Home from './pages/Home';
 import Project from "./pages/Project";
@@ -49,11 +50,10 @@ export default function PortfolioContainer() {
             <Route path="*" element={<FourOhFour />} />
             <Route path="/" element={<Home/>} />
             <Route path="work/:project" element={<Project/>} />
-            <Route path="about" element={<About />} />
           </Routes>
         </ScrollToTop>
       <Footer />
-      <div className='color-bottom'></div>
+      <MediaLinks />
     </div>
   );
 }

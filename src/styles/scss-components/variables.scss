@@ -10,6 +10,7 @@ $soft-black: #292929;
 $accent-red: #E86258;
 $accent-gold: #d99230;
 $accent-fuschia: #B41CAE;
+$charcoal: #344753;
 
 // Accent Gradients 
 $gradient-angle-left-right: 135deg;
@@ -22,6 +23,8 @@ $black-transparent: 	hsla(25, 77%, 63%, 0);
 $full-width-shadow-subtle: 0px 1px 3.3px rgba(0, 0, 0, 0.05), 0px 8px 16px rgba(0, 0, 0, 0.1);
 $long-shadow: -10px 10px 0px rgba(0, 0, 0, 1);
 $raised-shadow: -18px 18px 0px $black;
+$long-shadow-red: -10px 10px 0px $accent-red;
+$long-shadow-charcoal: -10px 10px 0px $charcoal;
 $short-shadow: -4px 4px 4px rgba(0, 0, 0, 0.4);
 
 
@@ -36,9 +39,9 @@ $headerHeight: 5rem;
 $headerHide: -5rem;
 
 // Media Queries
-$fontAdjustWidth: "screen and (min-width: 445px)";
+$fontAdjustWidth: "screen and (min-width: 520px)";
 $tabletWidth: "screen and (min-width: 768px)";
-$desktopWidth: "screen and (min-width: 960px)";
+$desktopWidth: "screen and (min-width: 1240px)";
 
 
 // Mixins

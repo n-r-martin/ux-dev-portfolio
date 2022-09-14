@@ -1,53 +1,73 @@
 section#about-me {
-    min-height: 1060px;
-    background-color: $white;
-    min-height: 95vh;
+    min-height: 124vh;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
+
+#about {
+    position: absolute;
+    top: 4rem;
+}
+
+
+.about-text-graphic {
+    width: 120vw;
+    position: absolute;
+    top: 2rem;
+    left: -12rem;
+    z-index: -10;
+    opacity: .075;
+
+    @include tablet {
+        width: 960px;
+        position: absolute;
+        top: 4rem;
+        left: -14rem;
+    }
+
+    @include desktop {
+        width: 960px;
+    }
+}
+
 
 div#about-me-container {
     width: 92.5%;
     margin: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 1100px;
 
     @include desktop {
-        width: 1040px;
-        margin-left: 4rem;
+        width: 100%;
+        margin: 0;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
 div#about-me-text-container {
-    padding: 32px 0;
+    max-width: 560px;
+}
 
-    @include tablet {
-        padding: 0;
-    }
-
-    @include desktop {
-        float: left;
-        width: 47.5%;
-        padding: 90px 32px;
-    }
+#about-me-text-container h4 {
+    margin-bottom: .5rem;
 }
 
 
-div.about-me-links {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+div.resume-link {
+    margin-top: 1rem;
 }
 
 a.link-with-icon {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     gap: 9px;
 }
 
-.link-with-icon h3 {
+.link-with-icon h6 {
     text-decoration: underline;
     display: inline-block;
 }
@@ -57,7 +77,6 @@ a.link-with-icon {
 }
 
 div#about-me-text-container a#about-me-resume-link {
-    margin-bottom: 2.5rem;
     display: inline-block;
     font-size: 18px;
 }
@@ -76,6 +95,6 @@ div#about-me-text-container a#about-me-resume-link {
 }
 
 #about-me-text-container p {
-    margin-bottom: 2rem !important;
+    margin-bottom: 0 !important;
     max-width: none;
 }

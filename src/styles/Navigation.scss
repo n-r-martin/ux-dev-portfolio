@@ -87,8 +87,16 @@
     position: absolute;
     bottom: 1rem;
     right: 5%;
+    text-align: right;
 
     @include tablet {
         right: 2rem;
     }    
+}
+
+.mobile-footer-links-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: flex-end;
 }

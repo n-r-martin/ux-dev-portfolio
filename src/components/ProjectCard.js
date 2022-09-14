@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons/lib";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiMap } from "react-icons/fi";
+import { DiReact, DiMongodb, DiNodejsSmall, DiJsBadge } from "react-icons/di";
+import { IconName } from "react-icons/fa";
+import { SiNodedotjs, SiLeaflet, SiMongodb, SiReact, SiJavascript, SiExpress, SiAdobexd } from "react-icons/si";
 import useIntersection from "../utils/intersectionObserver";
 import Marquee from "react-fast-marquee";
 
@@ -52,6 +55,12 @@ function ProjectCard(props) {
         <div className="project-card-img-container"  style={{ backgroundImage: `url("images${projectImg}")` }}></div>  
 
         <div className="project-card-text-and-ui">
+          <div className="external-icons">
+              <IconContext.Provider value={{ className: "mobile-footer-icons", size: 26 }}>
+                <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"><FiGithub /></a>
+                <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"><FiExternalLink /></a>
+              </IconContext.Provider>
+          </div>
           <div className="project-card-text-container">
 
             <h4>{title}</h4>
@@ -60,19 +69,15 @@ function ProjectCard(props) {
             <p>{description}</p>
 
             <ul className="technology-stack">
-              <li>React</li>
-              <li>MongoDB</li>
-              <li>NodeJS</li>
-              <li>Express</li>
-              <li>Leaflet API</li>
-            </ul>
-          </div>
-
-          <div className="external-icons">
-              <IconContext.Provider value={{ className: "mobile-footer-icons", size: 26 }}>
-                <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"><FiGithub /></a>
-                <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"><FiExternalLink /></a>
+              <IconContext.Provider value={{ className: "techstack-icons", size: 16 }}>
+                <li><SiReact />React</li>
+                <li><SiMongodb />MongoDB</li>
+                <li><SiNodedotjs />NodeJS</li>
+                <li><SiExpress/>ExpressJS</li>
+                <li><SiLeaflet />LeafletJS</li>
+                <li><SiAdobexd />Adobe XD</li>
               </IconContext.Provider>
+            </ul>
           </div>
 
           <div className="card-bottom-container">
@@ -91,6 +96,7 @@ function ProjectCard(props) {
       
           </div>
         </div>
+        
       </article>
     );
     }

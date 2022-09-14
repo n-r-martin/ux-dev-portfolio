@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconContext } from 'react-icons/lib';
-import { FiSend, FiFileText } from "react-icons/fi";
+import { FiFileText } from "react-icons/fi";
+import aboutTextGraphic from '../images/about-text-graphic.svg';
 import me from '../images/nick-martin.jpg';
 import Resume from '../docs/nicholasMartin-resume.pdf';
 
@@ -8,32 +9,37 @@ import Resume from '../docs/nicholasMartin-resume.pdf';
 function About() {
   return (
     <section id="about-me">
-      <div id="about-me-container" className="clearfix">
-        <div className='hero-text-block'>
-        <span className='bold'>it me</span>
-        </div>
+      <img className='about-text-graphic' src={aboutTextGraphic} alt="" />
 
+      <div id='about'></div>
+      <div id="about-me-container">
+        <div id="about-me-text-container">
+          <div className='hero-text-block'>
+          <span className='bold'>it me</span>
+          </div>
 
-        <div className='about-me-img-container'>
-          <div id='color-stripe'></div>
-          <img src={me} alt="Nick Martin in the Utah desert" className="clearfix" />
-        </div>  
+          {/* <div>
+            <h4>it me</h4>
+          </div> */}
 
-
-        <div id="about-me-text-container" className="clearfix">
           <p>Hi! I'm Nick &mdash; a Colorado based creative who believes in ethical applications of technology that inspire and drive continued innovation. I personally believe that designers are pivotal in driving, with intention, the evolution of how we interface with technology, as well as each other as we conitinue to integrate it into our lives. Technology should be first and foremost accessible to all, which means prioritizing usable, scalable patterns that are as engaging as they are approachable.</p>
           
           {/* <a id="about-me-resume-link" href="assets/nicholasMartin-resume.pdf" target="_blank">r&eacute;sum&eacute;</a> */}
 
-          <div className='about-me-links'>
-          <IconContext.Provider value={{ className: "anchor-icon-pairing", size: 28 }}>
+          <div className='resume-link'>
+          <IconContext.Provider value={{ className: "anchor-icon-pairing", size: 24 }}>
             <a className="link-with-icon" href={Resume} target="_blank" rel="noreferrer">
             <FiFileText />
-            <h3>r&eacute;sum&eacute;</h3> 
+            <h6>r&eacute;sum&eacute;</h6> 
             </a>
           </IconContext.Provider>
           </div>
         </div>
+
+        <div className='about-me-img-container'>
+          <div className='image-overlay'></div>
+          <img src={me} alt="Nick Martin in the Utah desert" className="clearfix" />
+        </div>  
       </div>
     </section>
   );

@@ -42,15 +42,16 @@ div.header-content-container {
     position: relative;
 }
 
+
 #name-description-container {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 3.75%;
-    transition: left .5s;
+    transition: left .3s;
 
     @include tablet {
-        left: 2rem;
+        left: 4rem;
     }
 
     @include desktop {
@@ -59,7 +60,11 @@ div.header-content-container {
 }
 
 .header-up div.header-content-container #name-description-container {
-    left: 1.5rem;
+    left: 3.75%;
+
+    @include tablet {
+        left: 1.5rem;
+    }
   }
 
 html:not([data-scroll='0']) header.header-down div.header-content-container #name-description-container {

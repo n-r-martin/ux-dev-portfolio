@@ -53,7 +53,7 @@ img.red-fill {
 .error-message-container {
     height: 400px;
     width: 720px;
-    background-color: hsla(0, 1%, 16%, .9);
+    background-color: 	hsla(4, 76%, 63%, .95);
     // background: linear-gradient($gradient-angle-left-right, hsla(25, 77%, 63%, .95), hsla(5, 87%, 60%, .95));
     // clip-path: polygon(100% 0, 100% 85%, 90% 100%, 0 100%, 0 0);
     border: 2px solid $white;
@@ -83,8 +83,9 @@ img.red-fill {
     font-size: 18px;
     font-weight: 700;
     transition: color .3s;
+    display: inline-block;
 }
 
 .back-to-home:hover {
-    color: #aaa;
+    color: $off-white;
 }

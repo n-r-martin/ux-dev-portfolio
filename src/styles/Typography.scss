@@ -98,20 +98,20 @@ div.hero-text-block span {
     font-family: $serif-two;
     font-weight: 200;
     letter-spacing: -2px;
-    font-size: 48px;
+    font-size: 11vw;
     color: $grey;
-    line-height: 64px;
+    line-height: 16vw;
     font-weight: 300;
     padding: 0;
     transition: font-size .3s;
     max-width: none;
 
     @include fontAdjust {
-        font-size: 56px;
-        line-height: 72px;
+        font-size: 60px;
+        line-height: 80px;
     }
 
-    @include desktop {
+    @include tablet {
         font-size: 72px;
         line-height: 92px;
     }    
@@ -136,16 +136,24 @@ div.hero-text-block span {
     line-height: 1;
 } 
 
+.hero-text-block span.white {
+    color: $white;
+}
+
 
 span.uppercase {
     text-transform: uppercase;
 }
 
 p#landing-section-intro {
-    max-width: 530px;
+    max-width: 440px;
     padding-bottom: 1.5rem;
     transition: padding .3s;
     margin-bottom: 2rem;
+
+    @include tablet {
+        max-width: 550px;
+    }
 
 
     @include desktop {
@@ -153,25 +161,6 @@ p#landing-section-intro {
         padding-bottom: 2.5rem;
     }
 }
-
-// p:not(.hero-text-block p) {
-//     margin-bottom: 24px;
-//     max-width: none;
-// }
-
-/* copy interaction next to email link
-i.fa-clone {
-    border: 1px solid $black;
-    background-color: $black;
-    color: $white;
-    border-radius: 50%;
-    padding: .4rem;
-    font-size: 12px;
-    font-weight: 900;
-    display: inline;
-    display: none;
-}
-*/
 
 /***** INTERNAL PROJECT PAGE TYPOGRAPHY STYLES *****/
 

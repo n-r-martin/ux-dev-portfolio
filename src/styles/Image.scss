@@ -60,23 +60,33 @@ article.raised > div.project-card-img-container {
 .about-me-img-container {
     position: relative;
     width: 100%;
-    float: none;
+    height: 400px;
+    box-shadow: $long-shadow-red;
+    border: 2px solid $black;
     display: inline-block; 
+    overflow: hidden;
+    margin-bottom: 2rem;
 
     @include tablet {
-        width: 320px;
-        float: left;
-        margin-right: 2rem;
+        width: 400px;
     }
+}
 
-    @include desktop {
-        float: left;
-       
-    }
+.about-me-img-container div.image-overlay {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: $soft-grey;
+    opacity: .15;
+    mix-blend-mode: screen;
 }
 
 .about-me-img-container img {
     width: 100%;
+    position: absolute;
+    top: -5rem;
+    z-index: 0;
 }
 
 div#color-stripe {

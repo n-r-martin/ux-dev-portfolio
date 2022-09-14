@@ -9,16 +9,28 @@ body {
 
 main {
     min-height: 800px;
+    width: 92.5%;
+    margin: auto;
+    transition: margin .3s;
+
+    @include tablet {
+        width: 85%;
+        margin: 0;
+        margin-left: 4rem;
+    }
 
     @include desktop {
+        margin: 0;
         padding: 0 4rem;
     }
 }
 
 main.no-padding {
     min-height: 1000px;
-    padding-bottom: 0;
+    padding: 0;
 }
+
+
 
 div#header-base {
     width: 100%;
@@ -69,6 +81,13 @@ main.project-content {
 
     @include tablet {
         width: 80%;
+        margin: 0;
+        margin-left: 4rem;
+    }
+
+    @include desktop {
+        width: 80%;
+        margin: auto;
     }
 }
 
@@ -127,16 +146,6 @@ div.project-role-list-container ul.project-role-list li {
         content: '\25CF';
         padding-right: 18px;
     }
-}
-
-.color-bottom {
-    height: 10vh;
-    width: 100%;
-    background-color: $accent-red;
-    position: absolute;
-    left: 0;
-    box-shadow: inset 0px 24px 16px rgba(0, 0, 0, 0.1);
-    border-top: 2px solid $black;
 }
 
 

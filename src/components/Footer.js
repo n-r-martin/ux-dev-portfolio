@@ -1,22 +1,38 @@
-import React from "react";
-import { IconContext } from "react-icons/lib";
-import { FiMail, FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
+import React from 'react';
+import peaceSign from "../images/peace-sign.svg";
+import { IconContext } from 'react-icons/lib';
+import { FiMail } from "react-icons/fi";
+import bgGraphic from "../images/footer-bg-graphic.svg";
+
 
 function Footer() {
-    return (
-        <footer className="clearfix">
-                <div className="footer-links-icons">
-                    <IconContext.Provider value={{ className: "footer-icons", size: 22 }}>
-                        <a href="mailto:hello@nickmartin.design"><FiMail /></a>
-                        <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"> <FiGithub /></a>
-                        <a href="https://www.linkedin.com/in/martinnickr/" target="_blank" rel="noreferrer"><FiLinkedin /></a>
-                        <a href="https://www.instagram.com/misterrubberburner/" target="_blank" rel="noreferrer"><FiInstagram /></a>
-                    </IconContext.Provider>
-                </div>
+  return (
+    <>
+    <footer>
+      <div className='footer-content'>
+            <div className="hero-text-block">
+                <p><span className='bold white'>say hello</span></p>
+            </div>
 
-        </footer>
-    );
+            <p>I'm always on the lookout for opportunities to work on exciting new projects with friendly, collborative minds!</p>
+
+            <div className='email-link'>
+                <IconContext.Provider value={{ className: "anchor-icon-pairing", size: 24 }}>
+                <a className="link-with-icon white" href="mailto:hello@nickmartin.design">
+                    <FiMail />
+                    <h6>hello@nickmartin.design</h6>
+                </a>
+                </IconContext.Provider>
+            </div>
+        </div>
+        <img className='footer-bg-graphic spin-counter-clockwise' src={bgGraphic} alt="" />
+    </footer>
+    </>
+  );
 }
 
 export default Footer;
+
+
+
 

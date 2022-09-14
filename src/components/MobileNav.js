@@ -8,8 +8,8 @@ function MobileNav () {
     return (
       <section className="mobile-menu">
           <ul>
-            <li><Link to="work">work</Link></li>
-            <li><Link to='about'>about</Link></li>
+            <li><Link to="/#work">work</Link></li>
+            <li><Link to='/#about'>about</Link></li>
             <li><a href={Resume} target="_blank" rel="noreferrer">r&eacute;sum&eacute;</a></li>
           </ul>
 
@@ -20,7 +20,7 @@ function MobileNav () {
           <h6 id="contact-number"><a href="tel:720-409-0852">720.409.0852</a></h6>
     
           <IconContext.Provider value={{ className: "mobile-footer-icons", size: 40 }}>
-            <div className="footer-links-icons">
+            <div className="mobile-footer-links-icons">
               <a href="https://github.com/n-r-martin" target="_blank" rel="noreferrer"> <FiGithub /></a>
               <a href="https://www.linkedin.com/in/martinnickr/" target="_blank" rel="noreferrer"><FiLinkedin /></a>
               <a href="https://www.instagram.com/misterrubberburner/" target="_blank" rel="noreferrer"><FiInstagram /></a>

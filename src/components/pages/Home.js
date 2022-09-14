@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import $ from "jquery";
 import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 import { IconContext } from 'react-icons/lib';
 import { FiArrowDown } from "react-icons/fi";
 import GlitchClip from 'react-glitch-effect/core/GlitchClip';
-import cyberpunkWheel from "../../images/cyberpunk-wheel.svg";
-import target from "../../images/target-crosshatch.svg";
-import peaceSign from "../../images/peace-sign.svg";
 
-
+import MobileGraphic from '../MobileGraphic';
+import DesktopGraphic from '../DesktopGraphic';
 import About from '../About';
 
 const glitchTimer = 2500;
@@ -25,6 +24,25 @@ const projectCards = projectArr.map(project => (
 
 
 const Home = () => {
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+
+  const handleResize = () => {
+    setIsMobileViewport(window.innerWidth <  1240)
+   }
+
+// Our React hook for managing the eventListener, also calls the handle resize function on initial load
+useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+})
+
+  $(window).on('scroll', function(){
+    let scrollTop = $(window).scrollTop();
+    $("#landing-section").css("opacity", 1 - scrollTop / 800);
+  });
+  
   useEffect(() => {
     const timer = setInterval(() => {
       toggleVisibility()
@@ -60,12 +78,12 @@ const Home = () => {
 
   return (
     <main>
-        <div className='landing-graphic-outer-container'>
-          <div className='landing-graphic-inner-container'>
-            <img className="cyberpunk-wheel" src={cyberpunkWheel} alt="" />
-            <img className='target-graphic' src={target} alt="" />
-          </div>
-        </div>
+      
+      {isMobileViewport ? 
+           null
+            :
+            <DesktopGraphic />
+          } 
       <section id="landing-section">
         <div>
           <div className="hero-text-block">
@@ -87,6 +105,7 @@ const Home = () => {
               <span><span className='bold uppercase'>stuff</span> too.</span>
             </div>
           </div>
+          
 
         <p id="landing-section-intro">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus ullam enim, reprehenderit repellendus adipisci corrupti tenetur officiis magnam aperiam dolorem, quam est perspiciatis quas cum nesciunt atque, amet culpa ex. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </div>
@@ -98,30 +117,17 @@ const Home = () => {
         </div>
 
         {/* <i className="fa fa-clone" aria-hidden="true"></i> */}
-
+        
       
       </section>
-    <div id="work"></div>
-    <section id="project-cards">
-      {/* Generate cards for as many as that exist where the data is being pulled from */}
-      {/* Programatically assign the cards ids */}
-      {projectCards}
-    </section>
+     
+      <section id="project-cards">
+      <div id="work"></div>
+        {/* Generate cards for as many as that exist where the data is being pulled from */}
+        {/* Programatically assign the cards ids */}
+        {projectCards}
+      </section>
     <About />
-    <section className='say-hello-section'>
-      <div className='say-hello-text'>
-      
-        <div className="hero-text-block">
-          <p><span className='bold'>say hello</span></p><img src={peaceSign} alt="" />
-        </div>
-
-        <p id="landing-section-intro">I'm always on the lookout for opportunities to work on exciting new projects with friendly, collborative minds!</p>
-
-        <h3><a href="mailto:hello@nickmartin.design">hello@nickmartin.design</a></h3>
-      </div>
-
-      {/* <i className="fa fa-clone" aria-hidden="true"></i> */}
-    </section>
     </main>
   );
 }
