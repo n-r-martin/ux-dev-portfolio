@@ -1,6 +1,9 @@
 section#project-cards {
     padding: 4rem 0 20rem;
     position: relative;
+    background-color: $white;
+    border-top: 2px solid $black;
+    box-shadow: 0px -24px 16px rgba(0, 0, 0, 0.1);
 
     @include desktop {
         padding: 10rem 0 20rem;

@@ -4,12 +4,11 @@ section#landing-section {
     -webkit-box-align: center;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
-    min-height: 95vh;
+    justify-content: end;
+    min-height: 100vh;
     // padding: 3rem 0;
     position: sticky;
-    // top: 3rem;
+    top: 0;
     // z-index: -10;
 
     @include tablet {
@@ -18,15 +17,213 @@ section#landing-section {
 
     @include desktop {
         padding: 0;
+        padding-top: 0;
     }
 }
 
+/***** HERO TEXT BLOCK *****/
+
+div.superhero-text-block {
+    padding-left: 1.5rem;
+}
+
+div.superhero-text-block h1 {
+    font-family: $serif-one;
+    color: $black;
+    letter-spacing: -2px;
+    font-size: 11vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 16vw;
+    font-weight: 700;
+    padding: 0;
+    transition: font-size .3s;
+
+    @include fontAdjust {
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    @include tablet {
+        font-size: 216px;
+        line-height: 184px;
+    }    
+}
 
 div.landing-bottom {
-    height: 200px;
+    height: 320px;
     width: 100%;
     background-color: $accent-red;
+    position: relative;
+    box-shadow: inset 0px -24px 16px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid $black;
 }
+
+div.landing-bottom-hero-text {
+    padding: 1.5rem 1.75rem;
+}
+
+div.landing-bottom-hero-text span {
+    font-family: $serif-two;
+    font-weight: 200;
+    letter-spacing: -2px;
+    font-size: 11vw;
+    color: $white;
+    line-height: 16vw;
+    font-weight: 300;
+    padding: 0;
+    transition: font-size .3s;
+    max-width: none;
+
+    @include fontAdjust {
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    @include tablet {
+        font-size: 48px;
+        line-height: 1.2;
+   
+    }    
+}
+
+.landing-bottom-hero-text span.bold {
+    font-family: $serif-one;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: normal;
+} 
+
+div.hero-text-first-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 14vw;
+ 
+    @include fontAdjust {
+     padding-bottom: 4.75rem;
+    }
+ 
+    @include tablet {
+     padding-bottom: 5.5rem;
+    }
+ 
+    @include desktop {
+     flex-direction: row;
+     gap: 16px;
+     padding: 0;
+    }
+ }
+ 
+ div.hero-text-second-row, div.hero-text-third-row {
+     display: inline;
+ 
+     @include tablet {
+         display: block;
+        } 
+ }
+ 
+ div.hero-text-third-row {
+     padding-left: 4vw;
+ 
+     @include fontAdjust {
+         padding-left: 18px;
+     }
+ 
+     @include tablet {
+         padding-left: 0;
+     }
+ }
+ 
+ div.glitch-text-container {
+     display: inline-block;
+     position: relative;
+ }
+ 
+  div.glitch {
+     position: absolute;
+     visibility: hidden;
+ }
+ 
+ .glitch.visible {
+     visibility: visible;
+ }
+
+div.landing-bottom-rect-accent {
+    height: 100px;
+    width: 400px;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: 2px solid $white;
+}
+
+div.rect-accent-left {
+    height: 100%;
+    width: 25%;
+    border-right: 2px solid $white;
+    float: left;
+}
+
+div.rect-accent-right {
+    float: right;
+    width: 75%;
+}
+
+div.white-black-type-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: right;
+    max-width: 700px;
+    gap: 8px;
+    position: absolute;
+    top: 10rem;
+    right: 1.5rem;
+}
+
+div.white-black-type-block span {
+    font-size: 24px;
+    font-weight: 700;
+}
+div.white-black-type-block span:nth-child(odd) {
+    color: $white;
+}
+
+
+
+
+
+section.scrolling-page-container {
+    width: 100%;
+    background-color: $white;
+}
+
+
+
+
+
+// p#landing-section-intro {
+//     max-width: 440px;
+//     padding-bottom: 1.5rem;
+//     transition: padding .3s;
+//     margin-bottom: 2rem;
+
+//     @include tablet {
+//         max-width: 550px;
+//     }
+
+
+//     @include desktop {
+//         max-width: 660px;
+//         padding-bottom: 2.5rem;
+//     }
+// }
+
+
+
+
+
 
 div.hero-text-block {
     padding-bottom: 32px;
@@ -47,61 +244,7 @@ div.hero-text-block {
     }
 }
 
-div.hero-text-first-row {
-   display: flex;
-   flex-direction: column;
-   gap: 2px;
-   padding-bottom: 14vw;
 
-   @include fontAdjust {
-    padding-bottom: 4.75rem;
-   }
-
-   @include tablet {
-    padding-bottom: 5.5rem;
-   }
-
-   @include desktop {
-    flex-direction: row;
-    gap: 24px;
-    padding: 0;
-   }
-}
-
-div.hero-text-second-row, div.hero-text-third-row {
-    display: inline;
-
-    @include tablet {
-        display: block;
-       }
-    
-}
-
-div.hero-text-third-row {
-    padding-left: 4vw;
-
-    @include fontAdjust {
-        padding-left: 18px;
-    }
-
-    @include tablet {
-        padding-left: 0;
-    }
-}
-
-div.glitch-text-container {
-    display: inline-block;
-    position: relative;
-}
-
- div.glitch {
-    position: absolute;
-    visibility: hidden;
-}
-
-.glitch.visible {
-    visibility: visible;
-}
 
 // div.design {
 //     visibility: hidden;
@@ -120,9 +263,10 @@ div#work-anchor-point {
 
 .down-arrow-container {
     position: absolute;
-    z-index: -10;
-    bottom: 2rem;
-    left: -.75rem;
+    z-index: 0;
+    bottom: 1rem;
+    left: 1rem;
+    color: $white;
 }
 
 /****** MOBILE BG STYLES ******/

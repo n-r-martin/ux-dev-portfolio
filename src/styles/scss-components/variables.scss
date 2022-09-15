@@ -7,7 +7,7 @@ $grey: #5a5855;
 $soft-grey: #F9F5F1;
 $black: #222;
 $soft-black: #292929;
-$accent-red: #E86258;
+$accent-red: #e52315;
 $accent-gold: #d99230;
 $accent-fuschia: #B41CAE;
 $charcoal: #344753;
@@ -22,6 +22,7 @@ $black-transparent: 	hsla(25, 77%, 63%, 0);
 //Box Shadows
 $full-width-shadow-subtle: 0px 1px 3.3px rgba(0, 0, 0, 0.05), 0px 8px 16px rgba(0, 0, 0, 0.1);
 $long-shadow: -10px 10px 0px rgba(0, 0, 0, 1);
+$long-shadow-up: -10px -10px 0px rgba(0, 0, 0, 1);
 $raised-shadow: -18px 18px 0px $black;
 $long-shadow-red: -10px 10px 0px $accent-red;
 $long-shadow-charcoal: -10px 10px 0px $charcoal;

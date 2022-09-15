@@ -38,10 +38,10 @@ useEffect(() => {
     return () => window.removeEventListener("resize", handleResize);
 })
 
-  $(window).on('scroll', function(){
-    let scrollTop = $(window).scrollTop();
-    $("#landing-section").css("opacity", 1 - scrollTop / 800);
-  });
+  // $(window).on('scroll', function(){
+  //   let scrollTop = $(window).scrollTop();
+  //   $("#landing-section").css("opacity", 1 - scrollTop / 800);
+  // });
   
   useEffect(() => {
     const timer = setInterval(() => {
@@ -126,8 +126,47 @@ useEffect(() => {
           </div>
 
           <div className='landing-bottom'>
+            <div className="landing-bottom-hero-text">
+              <div className='hero-text-first-row'>
+                <span>I like to do the </span>
+                <div className='glitch-text-container'>
+                  <GlitchClip className="glitch visible" duration={glitchTimer}>
+                    <span className='bold uppercase'>Design</span>
+                    </GlitchClip>
+                  <GlitchClip className="glitch" duration={glitchTimer}>
+                    <span className='bold uppercase'>Development</span>
+                  </GlitchClip>
+                </div>
+              </div>
+              <div className='hero-text-second-row'>
+                <span>and sometimes other</span> 
+              </div>
+              <div className='hero-text-third-row'>
+                <span><span className='bold uppercase'>stuff</span> too.</span>
+              </div>
+            </div>
 
+            <div className="down-arrow-container">
+            <IconContext.Provider value={{ className: "landing-bottom-arrow-icon", size: 48 }}>
+              <FiArrowDown />
+            </IconContext.Provider>
+           </div>
 
+            <div className='landing-bottom-rect-accent'>
+              <div className='rect-accent-left'></div>
+              <div className='rect-accent-right'></div>
+            </div>
+
+            <div className='white-black-type-block'>
+              <span>UX Design</span>
+              <span>Developer</span> 
+              <span>UX Design</span>
+              <span>Developer</span>
+              <span>UX Design</span>
+              <span>Developer</span> 
+              <span>UX Design</span>
+              <span>Developer</span>
+            </div>
           </div>
 
 
@@ -140,13 +179,13 @@ useEffect(() => {
         </div> */}
       </section>
      
-      <section id="project-cards">
-      <div id="work"></div>
-        {/* Generate cards for as many as that exist where the data is being pulled from */}
-        {/* Programatically assign the cards ids */}
-        {projectCards}
-      </section>
-    <About />
+        <section id="project-cards">
+          <div id="work"></div>
+          {/* Generate cards for as many as that exist where the data is being pulled from */}
+          {/* Programatically assign the cards ids */}
+          {projectCards}
+        </section>
+        <About />
     </main>
   );
 }

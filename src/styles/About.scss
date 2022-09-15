@@ -4,11 +4,13 @@ section#about-me {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    background-color: $white;
 }
 
 #about {
     position: absolute;
     top: 4rem;
+    z-index: 10;
 }
 
 
@@ -17,7 +19,7 @@ section#about-me {
     position: absolute;
     top: 2rem;
     left: -12rem;
-    z-index: -10;
+    z-index: 0;
     opacity: .075;
 
     @include tablet {

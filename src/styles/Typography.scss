@@ -83,108 +83,20 @@ p {
     }
 }
 
+span.white {
+    color: $white;
+}
+
+span.uppercase {
+    text-transform: uppercase;
+}
+
 .project-content p {
     max-width: none;
 }
 
 .card-button-link-content p {
     font-family: $sans-serif;
-}
-
-
-/***** HERO TEXT BLOCK *****/
-
-div.superhero-text-block h1 {
-    font-family: $serif-one;
-    color: $black;
-    letter-spacing: -2px;
-    font-size: 11vw;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 16vw;
-    font-weight: 700;
-    padding: 0;
-    transition: font-size .3s;
-
-    @include fontAdjust {
-        font-size: 60px;
-        line-height: 80px;
-    }
-
-    @include tablet {
-        font-size: 168px;
-        line-height: 144px;
-    }    
-}
-
-
-
-div.hero-text-block span {
-    font-family: $serif-two;
-    font-weight: 200;
-    letter-spacing: -2px;
-    font-size: 11vw;
-    color: $grey;
-    line-height: 16vw;
-    font-weight: 300;
-    padding: 0;
-    transition: font-size .3s;
-    max-width: none;
-
-    @include fontAdjust {
-        font-size: 60px;
-        line-height: 80px;
-    }
-
-    @include tablet {
-        font-size: 72px;
-        line-height: 92px;
-    }    
-}
-
-
-.hero-text-block.underlined {
-    border-bottom: 1px solid $black;
-    padding-bottom: 0;
-    margin-bottom: 2rem;
-}
-
-.hero-text-block span.bold {
-    font-family: $serif-one;
-    font-weight: 700;
-    color: $black;
-    letter-spacing: normal;
-} 
-
-.hero-text-block span.large {
-    font-size: 1.6em;
-    line-height: 1;
-} 
-
-.hero-text-block span.white {
-    color: $white;
-}
-
-
-span.uppercase {
-    text-transform: uppercase;
-}
-
-p#landing-section-intro {
-    max-width: 440px;
-    padding-bottom: 1.5rem;
-    transition: padding .3s;
-    margin-bottom: 2rem;
-
-    @include tablet {
-        max-width: 550px;
-    }
-
-
-    @include desktop {
-        max-width: 660px;
-        padding-bottom: 2.5rem;
-    }
 }
 
 /***** INTERNAL PROJECT PAGE TYPOGRAPHY STYLES *****/
