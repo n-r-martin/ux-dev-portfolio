@@ -38,6 +38,7 @@ div.superhero-text-block h1 {
     font-weight: 700;
     padding: 0;
     transition: font-size .3s;
+    letter-spacing: -5px;
 
     @include fontAdjust {
         font-size: 60px;
@@ -149,6 +150,23 @@ div.hero-text-first-row {
      visibility: visible;
  }
 
+ .spacey-ui-graphics {
+    position: absolute;
+    top: -7.25rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    opacity: 1;
+}
+
+.spacey-ui-graphics img {
+    width: 100px;
+    flex-basis: 32.5%;
+    display: block;
+}
+
 div.landing-bottom-rect-accent {
     height: 100px;
     width: 400px;
@@ -175,7 +193,7 @@ div.white-black-type-block {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: right;
-    max-width: 700px;
+    max-width: 560px;
     gap: 8px;
     position: absolute;
     top: 10rem;
@@ -183,11 +201,15 @@ div.white-black-type-block {
 }
 
 div.white-black-type-block span {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
 }
 div.white-black-type-block span:nth-child(odd) {
     color: $white;
+}
+
+div.white-black-type-block span:nth-child(even) {
+    color: $black;
 }
 
 
@@ -301,7 +323,7 @@ div#work-anchor-point {
     height: 1400px;
     overflow: hidden;
     right: 0;
-    opacity: 1;
+    opacity: .8;
 }
 
 .desktop-bg-inner-container {
@@ -358,22 +380,6 @@ div#work-anchor-point {
     } 
 }
 
-.spacey-ui-graphics {
-    position: absolute;
-    bottom: 40rem;
-    right: 22.5rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 8px;
-    opacity: 1;
-}
-
-.spacey-ui-graphics img {
-    width: 120px;
-    flex-basis: 32.5%;
-    display: block;
-}
   
   @keyframes glitch{
     61.9% {

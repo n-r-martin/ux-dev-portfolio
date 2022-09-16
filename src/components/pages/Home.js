@@ -6,6 +6,11 @@ import { IconContext } from 'react-icons/lib';
 import { FiArrowDown } from "react-icons/fi";
 import GlitchClip from 'react-glitch-effect/core/GlitchClip';
 
+import spacewave from "../../images/spacewave.svg";
+import calculation from "../../images/calculation.svg";
+import topography from "../../images/topography.svg";
+
+
 import MobileGraphic from '../MobileGraphic';
 import DesktopGraphic from '../DesktopGraphic';
 import About from '../About';
@@ -152,20 +157,30 @@ useEffect(() => {
             </IconContext.Provider>
            </div>
 
+           <div className='spacey-ui-graphics'>
+                    <img className="spacewave-img" src={spacewave} alt="" />
+                    <img className="calculation-img" src={calculation} alt="" />
+                    <img className="topography-img" src={topography} alt="" />
+              </div>
+
             <div className='landing-bottom-rect-accent'>
               <div className='rect-accent-left'></div>
               <div className='rect-accent-right'></div>
             </div>
 
             <div className='white-black-type-block'>
-              <span>UX Design</span>
-              <span>Developer</span> 
-              <span>UX Design</span>
-              <span>Developer</span>
-              <span>UX Design</span>
-              <span>Developer</span> 
-              <span>UX Design</span>
-              <span>Developer</span>
+              <span>HTML5</span>
+              <span>CSS3</span> 
+              <span>JavaScript</span>
+              <span>ReactJS</span>
+              <span>Figma</span>
+              <span>AdobeXD</span> 
+              <span>NodeJS</span>
+              <span>MongoDB</span>
+              <span>Git</span>
+              <span>Sketch</span> 
+              <span>Jira</span>
+              <span>Azure DevOps</span>
             </div>
           </div>
 

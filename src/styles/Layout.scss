@@ -9,7 +9,7 @@ body {
 
 main {
     min-height: 800px;
-    width: 92.5%;
+    width: 100%;
     margin: auto;
     transition: margin .3s;
 
@@ -29,6 +29,10 @@ main {
 main.no-padding {
     min-height: 1000px;
     padding: 0;
+}
+
+main.project-content {
+    margin-top: 8rem
 }
 
 
@@ -76,7 +80,7 @@ main.project-content {
 
     @include desktop {
         width: 80%;
-        margin: auto;
+        margin: $headerHeight auto 0;
     }
 }
 
