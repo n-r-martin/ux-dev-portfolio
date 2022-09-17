@@ -5,7 +5,7 @@ section#landing-section {
     flex-direction: column;
     align-items: flex-start;
     justify-content: end;
-    min-height: 100vh;
+    min-height: 110vh;
     // padding: 3rem 0;
     position: sticky;
     top: 0;
@@ -58,6 +58,7 @@ div.landing-bottom {
     position: relative;
     box-shadow: inset 0px -24px 16px rgba(0, 0, 0, 0.1);
     border-top: 2px solid $black;
+    margin-bottom: 10vh;
 }
 
 div.landing-bottom-hero-text {
@@ -213,13 +214,22 @@ div.white-black-type-block span:nth-child(even) {
 }
 
 
-
-
-
-section.scrolling-page-container {
+div.concealing-shape-one {
     width: 100%;
-    background-color: $white;
+    height: 115vh;
+    background-color: $black;
+    position: absolute;
+    top: 115vh;
+    z-index: 0;
+    clip-path: polygon(0 48%, 100% 0%, 100% 100%, 0% 100%);
 }
+
+
+
+// section.scrolling-page-container {
+//     width: 100%;
+//     background-color: $white;
+// }
 
 
 

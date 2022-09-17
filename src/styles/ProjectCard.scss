@@ -10,6 +10,19 @@ section#project-cards {
     }
 }
 
+div.section-circle-accent {
+    width: 24px;
+    height: 24px;
+    // background: linear-gradient($gradient-angle-top-down, $accent-red, $off-white);
+    background-color: $accent-red;
+    border: 2px solid $black;
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
 div#work {
     position: absolute;
     top: -5rem;

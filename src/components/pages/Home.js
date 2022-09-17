@@ -28,11 +28,24 @@ const projectCards = projectArr.map(project => (
 ))
 
 
+
+
 const Home = () => {
   const [isMobileViewport, setIsMobileViewport] = useState(false);
+  
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
+
+  // let initPosY;
+
+  // const getPosY = () => {
+  //   initPosY = parseInt($('.concealing-shape-one').css("top"));
+  //   console.log(initPosY);
+  // }
 
   const handleResize = () => {
-    setIsMobileViewport(window.innerWidth <  1240)
+    setIsMobileViewport(window.innerWidth <  1240);
    }
 
 // Our React hook for managing the eventListener, also calls the handle resize function on initial load
@@ -43,10 +56,21 @@ useEffect(() => {
     return () => window.removeEventListener("resize", handleResize);
 })
 
-  // $(window).on('scroll', function(){
-  //   let scrollTop = $(window).scrollTop();
-  //   $("#landing-section").css("opacity", 1 - scrollTop / 800);
-  // });
+
+
+// Need to guarantee that the concelaing shape is always behind the project cards, no matter where the top project cards section might be after load, reload, or page height resize.
+ // What if page is resized if user is scrolled down further on the page?
+
+
+ $(window).on('load', function(){
+  console.log($('.concealing-shape-one').css('top'));
+});
+
+  $(window).on('scroll', function(){
+    let scrollTop = $(window).scrollTop();
+    // $("#landing-section").css("opacity", 1 - scrollTop / 800);
+    $('.concealing-shape-one').css("top", 914 - scrollTop)
+  });
   
   useEffect(() => {
     const timer = setInterval(() => {
@@ -66,6 +90,10 @@ useEffect(() => {
       element.classList.toggle('visible');
     }
   }
+
+
+
+ 
 
  
  // Taking the project card data from the imported json file and creating a project card for each entry
@@ -183,18 +211,17 @@ useEffect(() => {
               <span>Azure DevOps</span>
             </div>
           </div>
-
-
-
-
         {/* <div className="down-arrow-container">
         <IconContext.Provider value={{ className: "mobile-footer-icons", size: 80 }}>
           <FiArrowDown />
         </IconContext.Provider>
         </div> */}
       </section>
+
+      <div className='concealing-shape-one'></div>
      
         <section id="project-cards">
+          <div className='section-circle-accent'></div>
           <div id="work"></div>
           {/* Generate cards for as many as that exist where the data is being pulled from */}
           {/* Programatically assign the cards ids */}
