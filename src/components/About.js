@@ -39,7 +39,7 @@ function About() {
 
         <div className='about-me-img-container'>
           <div className='image-overlay'></div>
-          <img src={meTwo} alt="Nick Martin in the Utah desert" className="clearfix" />
+          <img src={me} alt="Nick Martin in the Utah desert" className="clearfix" />
         </div>  
       </div>
     </section>
