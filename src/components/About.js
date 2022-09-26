@@ -3,6 +3,7 @@ import { IconContext } from 'react-icons/lib';
 import { FiFileText } from "react-icons/fi";
 import aboutTextGraphic from '../images/about-text-graphic.svg';
 import me from '../images/nick-martin.jpg';
+import meTwo from '../images/nick-martin-two.jpg';
 import Resume from '../docs/nicholasMartin-resume.pdf';
 
 
@@ -14,7 +15,7 @@ function About() {
       <div id='about'></div>
       <div id="about-me-container">
         <div id="about-me-text-container">
-          <div className='hero-text-block'>
+          <div className='section-header-large'>
           <span className='bold'>it me</span>
           </div>
 
@@ -38,7 +39,7 @@ function About() {
 
         <div className='about-me-img-container'>
           <div className='image-overlay'></div>
-          <img src={me} alt="Nick Martin in the Utah desert" className="clearfix" />
+          <img src={meTwo} alt="Nick Martin in the Utah desert" className="clearfix" />
         </div>  
       </div>
     </section>

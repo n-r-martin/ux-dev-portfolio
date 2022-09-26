@@ -6,7 +6,33 @@ section#project-cards {
     box-shadow: 0px -24px 16px rgba(0, 0, 0, 0.1);
 
     @include desktop {
-        padding: 10rem 0 20rem 4rem;
+        padding: 26rem 0 20rem 4rem;
+    }
+}
+
+div#work {
+    position: absolute;
+    top: 10rem;
+    visibility: hidden;
+}
+
+.work-word-square {
+    width: 120vw;
+    position: absolute;
+    top: 6rem;
+    left: 12rem;
+    z-index: 0;
+    opacity: .075;
+
+    @include tablet {
+        width: 960px;
+        position: absolute;
+        top: 12rem;
+        left: -6rem;
+    }
+
+    @include desktop {
+        width: 1400px;
     }
 }
 
@@ -21,11 +47,6 @@ div.section-circle-accent {
     top: -12px;
     transform: translateX(-50%);
     border-radius: 50%;
-}
-
-div#work {
-    position: absolute;
-    top: -5rem;
 }
 
 article.project-card {

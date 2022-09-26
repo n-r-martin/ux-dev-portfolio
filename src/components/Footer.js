@@ -10,7 +10,7 @@ function Footer() {
     <>
     <footer>
       <div className='footer-content'>
-            <div className="hero-text-block">
+            <div className="section-header-large">
                 <p><span className='bold white'>say hello</span></p>
             </div>
 

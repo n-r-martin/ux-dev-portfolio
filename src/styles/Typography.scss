@@ -83,6 +83,16 @@ p {
     }
 }
 
+div.section-header-large {
+    font-family: $serif-one;
+    font-size: 64px;
+    margin-bottom: .5rem;
+}
+
+span.bold {
+    font-weight: 700;
+}
+
 span.white {
     color: $white;
 }

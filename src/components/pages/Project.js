@@ -8,6 +8,7 @@ const projectArr = projectData.projects;
 
 
 function Project() {
+
     let { project }  = useParams();
     let projectStr = project.toString();
 

@@ -43,7 +43,7 @@ export default function PortfolioContainer() {
   // const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
+    <>
       <Header />
         <ScrollToTop>
           <Routes>
@@ -54,6 +54,6 @@ export default function PortfolioContainer() {
         </ScrollToTop>
       <Footer />
       <MediaLinks />
-    </div>
+      </>
   );
 }

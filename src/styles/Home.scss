@@ -5,11 +5,11 @@ section#landing-section {
     flex-direction: column;
     align-items: flex-start;
     justify-content: end;
-    min-height: 110vh;
+    min-height: 135vh;
     // padding: 3rem 0;
     position: sticky;
     top: 0;
-    // z-index: -10;
+    z-index: -100;
 
     @include tablet {
         padding: 4rem 0;
@@ -56,9 +56,8 @@ div.landing-bottom {
     width: 100%;
     background-color: $accent-red;
     position: relative;
-    box-shadow: inset 0px -24px 16px rgba(0, 0, 0, 0.1);
     border-top: 2px solid $black;
-    margin-bottom: 10vh;
+    margin-bottom: 35vh;
 }
 
 div.landing-bottom-hero-text {
@@ -168,26 +167,44 @@ div.hero-text-first-row {
     display: block;
 }
 
-div.landing-bottom-rect-accent {
-    height: 100px;
+.cyber-banner {
     width: 400px;
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    border: 2px solid $white;
 }
 
-div.rect-accent-left {
-    height: 100%;
-    width: 25%;
-    border-right: 2px solid $white;
-    float: left;
-}
+// div.landing-bottom-rect-accent {
+//     height: 100px;
+//     width: 400px;
+//     position: absolute;
+//     top: 1.5rem;
+//     right: 1.5rem;
+//     border: 2px solid $white;
+// }
 
-div.rect-accent-right {
-    float: right;
-    width: 75%;
-}
+// div.rect-accent-left {
+//     height: 100%;
+//     width: 25%;
+//     border-right: 2px solid $white;
+//     float: left;
+// }
+
+// .song-graph {
+//     width: 100%;
+// }
+
+// div.rect-accent-right {
+//     float: right;
+//     width: 75%;
+//     position: relative;
+// }
+
+// .rect-right-img {
+//     position: absolute;
+//     right: 4px;
+//     top: 4px;
+// }
 
 div.white-black-type-block {
     display: flex;
@@ -213,84 +230,173 @@ div.white-black-type-block span:nth-child(even) {
     color: $black;
 }
 
-
-div.concealing-shape-one {
+div.concealing-shape-white {
     width: 100%;
     height: 115vh;
-    background-color: $black;
+    min-height: 4320px;
     position: absolute;
     top: 115vh;
+    z-index: -5;
+}
+
+.concealing-shape-white .border-trick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
     z-index: 0;
-    clip-path: polygon(0 48%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.concealing-shape-white .shape {
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 100%;
+    background-color: $off-white;
+    z-index: 5;
+    clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.st-george {
+    position: absolute;
+    right: -5rem;
+    top: -5rem;
+    width: 80%;
+    z-index: 5;
+}
+
+.gradient-bars {
+    position: absolute;
+    top: 50rem;
+    right: 11.25rem;
+    z-index: 0;
+}
+
+
+div.concealing-shape-red {
+    width: 100%;
+    height: 115vh;
+    min-height: 4320px;
+    position: absolute;
+    top: 120vh;
+    z-index: -5;
+}
+
+.concealing-shape-red .border-trick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    z-index: 0;
+    clip-path: polygon(0 0, 100% 7.5%, 100% 100%, 0% 100%);
+}
+
+.concealing-shape-red .shape {
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 100%;
+    background-color: $accent-red;
+    z-index: 5;
+    clip-path: polygon(0 0, 100% 7.5%, 100% 100%, 0% 100%);
+}
+
+.shape-inner-container {
+    position: relative;  
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.red-bg-img {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 2rem;
+    z-index: 0;
+}
+
+.maze-texture {
+    width: 100%;
+    position: absolute;
+    top: 135vh;
+}
+
+.top-left-bg-elem {
+    position: absolute;
+    left: 1.5rem;
+    top: 5rem;
+    z-index: 5;
+}
+
+.top-right-bg-elem {
+    position: absolute;
+    right: 1.5rem;
+    top: 21rem;
+    z-index: 5;
 }
 
 
 
-// section.scrolling-page-container {
-//     width: 100%;
-//     background-color: $white;
-// }
-
-
-
-
-
-// p#landing-section-intro {
-//     max-width: 440px;
-//     padding-bottom: 1.5rem;
-//     transition: padding .3s;
-//     margin-bottom: 2rem;
-
-//     @include tablet {
-//         max-width: 550px;
-//     }
-
-
-//     @include desktop {
-//         max-width: 660px;
-//         padding-bottom: 2.5rem;
-//     }
-// }
-
-
-
-
-
-
-div.hero-text-block {
-    padding-bottom: 32px;
-    width: 100%;
-    transition: max-width .3s, padding .3s;
-   
-
-    @include tablet {
-        max-width: 740px;
-        padding-bottom: 32px;  
-    }
-
-    @include desktop {
-        max-width: 1200px;
-        padding-top: 5rem;
-        display: flex;
-        flex-direction: column;
-    }
+.red-bg-quote {
+    font-family: $serif-one;
+    font-weight: 700;
+    color: $white;
+    width: 800px;
+    height: 380px;
+    font-size: 56px;
+    line-height: 1.5;
+    position: absolute;
+    top: 64rem;
+    right: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.red-bg-quote blockquote {
+    position: relative;
+}
 
+.red-bg-quote blockquote::before { 
+    content: open-quote;
+    font-weight: 700;
+    font-size: 128px;
+    position: absolute;
+    left: -4.5rem;
+    top: 3rem;
+    line-height: 0;
+}  
 
-// div.design {
-//     visibility: hidden;
-//     animation: showDesign 2s infinite;
-// }
+.red-bg-quote blockquote::after { 
+    content: close-quote;
+    font-weight: 700;
+    font-size: 128px;
+    position: absolute;
+    bottom: 2rem;
+    line-height: 0;
+}
 
-// @keyframes showDesign {
-//     from {visibility: hidden;}
-//     to {visibility: visible;}
-//   }
+.red-bg-quote span {
+    font-size: 44px;
+}
 
-div#work-anchor-point {
-    width: 100%;
-    height: 8px;
+.red-bg-quote span::before {
+    content: '\2014';
+    margin-right: 16px;
+}
+
+.cyber-texture-left {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 40rem;
+}
+
+.cyber-texture-right {
+    position: absolute;
+    right: 6rem;
+    top: 36rem;
 }
 
 .down-arrow-container {
@@ -325,88 +431,6 @@ div#work-anchor-point {
 }
 
 
-/****** DESKTOP BG STYLES ******/
 
-.desktop-bg-outer-container {
-    position: absolute;
-    width: 900px;
-    height: 1400px;
-    overflow: hidden;
-    right: 0;
-    opacity: .8;
-}
-
-.desktop-bg-inner-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-
-.cyberpunk-wheel {
-    position: absolute;
-    width: 1400px; 
-    top: -5rem;
-    right: -35rem;
-    opacity: 1;
-}
-
-.spin {
-    -webkit-animation:spin 40s linear infinite;
-    -moz-animation:spin 40s linear infinite;
-    animation:spin 40s linear infinite;
-    overflow: hidden;
-}
-
-@-moz-keyframes spin { 
-    100% { -moz-transform: rotate(360deg); } 
-}
-@-webkit-keyframes spin { 
-    100% { -webkit-transform: rotate(360deg); } 
-}
-@keyframes spin { 
-    100% { 
-        -webkit-transform: rotate(360deg); 
-        transform:rotate(360deg); 
-    } 
-}
-
-.spin-counter-clockwise {
-    -webkit-animation:spin-counter-clockwise 60s linear infinite;
-    -moz-animation:spin-counter-clockwise 60s linear infinite;
-    animation:spin-counter-clockwise 60s linear infinite;
-}
-
-@-moz-keyframes spin-counter-clockwise { 
-    100% { -moz-transform: rotate(-360deg); } 
-}
-@-webkit-keyframes spin-counter-clockwise { 
-    100% { -webkit-transform: rotate(-360deg); } 
-}
-@keyframes spin-counter-clockwise { 
-    100% { 
-        -webkit-transform: rotate(-360deg); 
-        transform:rotate(-360deg); 
-    } 
-}
-
-  
-  @keyframes glitch{
-    61.9% {
-       transform: translate(0,0);
-       opacity: 0;
-    }
-    62%{
-        transform: translate(0,0); 
-        opacity: 1;
-    }
-    80% {
-       transform: translate(4px,-8px);
-       opacity: 1;
-    }
-    80.1% {
-       opacity: 0;
-    }
-  }
   
  
