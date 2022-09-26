@@ -14,6 +14,7 @@ function AresView(props) {
   const projectImg = projectHeader.headerImgUrl;
   const roles = props.roles;
 
+
   return (
     <>
     <section className="project-heading">

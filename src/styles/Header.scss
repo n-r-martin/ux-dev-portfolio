@@ -1,12 +1,4 @@
-div#header-base {
-    width: 100%;
-    position: absolute;
-    height: $headerHeight;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    background-color: $white;
-}
+
 
 /***** HEADER *****/
 
@@ -51,11 +43,11 @@ div.header-content-container {
     transition: left .3s;
 
     @include tablet {
-        left: 4rem;
+        left: 1.5rem;
     }
 
     @include desktop {
-        left: 4rem;
+        left: 2rem;
     }
 }
 
