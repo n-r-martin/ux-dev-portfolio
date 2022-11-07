@@ -9,6 +9,7 @@ import GlitchClip from 'react-glitch-effect/core/GlitchClip';
 import spacewave from "../../images/spacewave.svg";
 import calculation from "../../images/calculation.svg";
 import topography from "../../images/topography.svg";
+import cyberBannerVertical from "../../images/cyberpunk-banner-vertical.svg";
 import cyberBanner from "../../images/cyberpunk-banner.svg";
 import stGeorge from "../../images/st-george.png";
 import gradientBars from "../../images/gradient-bars.svg";
@@ -41,12 +42,12 @@ const projectCards = projectArr.map(project => (
 const Home = () => {
   const [isMobileViewport, setIsMobileViewport] = useState(false);
 
-  window.onbeforeload = function () {
+  window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   }
 
   const handleResize = () => {
-    setIsMobileViewport(window.innerWidth <  1240);
+    setIsMobileViewport(window.innerWidth <  520);
    }
 
 // Our React hook for managing the eventListener, also calls the handle resize function on initial load
@@ -166,7 +167,12 @@ useEffect(() => {
                     <img className="topography-img" src={topography} alt="" />
               </div>
 
-            <img className='cyber-banner' src={cyberBanner} alt="" />
+            {isMobileViewport ? 
+              <img className='cyber-banner-vertical' src={cyberBannerVertical} alt="" />
+            :
+              <img className='cyber-banner' src={cyberBanner} alt="" />
+            } 
+           
 
 
             <div className='white-black-type-block'>
@@ -216,11 +222,6 @@ useEffect(() => {
             {/* <img className='target-crosshatch' src={targetGraphic} alt="" /> */}
             <img className='top-left-bg-elem' src={topLeftBgElem} alt="" />
             <img className='top-right-bg-elem' src={topRightBgElem} alt="" />
-            {/* <div className='red-bg-quote'>
-              <blockquote>The world is full of magical things, patiently waiting for senses to grow sharper.</blockquote>
-              <span>W.B. Yeats</span>
-            </div> */}
-            <img className='cyber-texture-left' src={cyberTextureLeft} alt="" />
             <img className='cyber-texture-right' src={cyberTextureRight} alt="" />
           </div>
         </div>
@@ -228,8 +229,17 @@ useEffect(() => {
      
         <section id="project-cards">
           <div className='section-circle-accent'></div>
-          <img className='work-word-square' src={workWordSquare} alt="" />
+          {/* <img className='work-word-square' src={workWordSquare} alt="" /> */}
           <div id="work"></div>
+          <div className='section-header'>
+            <div className='header-accent'>
+              <div className='header-accent-circle'></div>
+              <span className='bold uppercase'>work</span>
+            </div>
+            <div className='header-strikethrough'></div>
+            <span className='bold'>work</span>
+            <div className='header-strikethrough'></div>
+          </div>
           {/* Generate cards for as many as that exist where the data is being pulled from */}
           {/* Programatically assign the cards ids */}
           {projectCards}

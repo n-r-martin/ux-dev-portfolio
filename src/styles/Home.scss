@@ -5,19 +5,21 @@ section#landing-section {
     flex-direction: column;
     align-items: flex-start;
     justify-content: end;
-    min-height: 135vh;
+    min-height: 120vh;
     // padding: 3rem 0;
     position: sticky;
     top: 0;
     z-index: -100;
 
     @include tablet {
-        padding: 4rem 0;
+        padding: 0;
+        min-height: 130vh;
     }
 
     @include desktop {
         padding: 0;
         padding-top: 0;
+        min-height: 135vh;
     }
 }
 
@@ -25,29 +27,33 @@ section#landing-section {
 
 div.superhero-text-block {
     padding-left: 1.5rem;
+    padding-bottom: .5rem;
 }
 
 div.superhero-text-block h1 {
     font-family: $serif-one;
     color: $black;
     letter-spacing: -2px;
-    font-size: 11vw;
+    font-size: 24vw;
     font-weight: 700;
     text-transform: uppercase;
-    line-height: 16vw;
+    line-height: .8;
     font-weight: 700;
     padding: 0;
     transition: font-size .3s;
     letter-spacing: -5px;
 
-    @include fontAdjust {
-        font-size: 60px;
-        line-height: 80px;
-    }
+    // @include fontAdjust {
+    //     font-size: 128px;
+    //     line-height: 108px;
+    // }
 
     @include tablet {
+        font-size: 176px;
+    }
+
+    @include desktop {
         font-size: 216px;
-        line-height: 184px;
     }    
 }
 
@@ -57,28 +63,38 @@ div.landing-bottom {
     background-color: $accent-red;
     position: relative;
     border-top: 2px solid $black;
-    margin-bottom: 35vh;
+    margin-bottom: 20vh;
+
+    @include tablet {
+        margin-bottom: 30vh;
+    }
+
+    @include desktop {
+        margin-bottom: 35vh;
+    }
 }
 
 div.landing-bottom-hero-text {
     padding: 1.5rem 1.75rem;
+    width: 75%;
+    max-width: 600px;
 }
 
 div.landing-bottom-hero-text span {
     font-family: $serif-two;
     font-weight: 200;
     letter-spacing: -2px;
-    font-size: 11vw;
+    font-size: 7vw;
     color: $white;
-    line-height: 16vw;
+    line-height: 1.2;
     font-weight: 300;
     padding: 0;
     transition: font-size .3s;
     max-width: none;
 
     @include fontAdjust {
-        font-size: 60px;
-        line-height: 80px;
+        font-size: 6.25vw;
+        line-height: 1.2;
     }
 
     @include tablet {
@@ -99,25 +115,25 @@ div.hero-text-first-row {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    padding-bottom: 14vw;
+    padding-bottom: 8.75vw;
  
     @include fontAdjust {
-     padding-bottom: 4.75rem;
-    }
- 
-    @include tablet {
-     padding-bottom: 5.5rem;
-    }
- 
-    @include desktop {
+     padding-bottom: 0;
      flex-direction: row;
-     gap: 16px;
-     padding: 0;
+     gap: 12px;
+    }
+
+    @include tablet {
+        gap: 14px;
+    }
+
+    @include desktop {
+        gap: 16px;
     }
  }
  
  div.hero-text-second-row, div.hero-text-third-row {
-     display: inline;
+     display: block;
  
      @include tablet {
          display: block;
@@ -125,15 +141,7 @@ div.hero-text-first-row {
  }
  
  div.hero-text-third-row {
-     padding-left: 4vw;
- 
-     @include fontAdjust {
-         padding-left: 18px;
-     }
- 
-     @include tablet {
-         padding-left: 0;
-     }
+     padding-left: 0;
  }
  
  div.glitch-text-container {
@@ -152,13 +160,20 @@ div.hero-text-first-row {
 
  .spacey-ui-graphics {
     position: absolute;
-    top: -7.25rem;
+    top: -10.25rem;
     right: 1.5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 8px;
-    opacity: 1;
+    opacity: 0;
+    z-index: -10;
+
+    @include desktop {
+        top: -7.25rem;
+        right: 1.5rem;
+        opacity: 1;
+    }
 }
 
 .spacey-ui-graphics img {
@@ -167,44 +182,34 @@ div.hero-text-first-row {
     display: block;
 }
 
-.cyber-banner {
-    width: 400px;
+.cyber-banner-vertical {
+    width: 68px;
     position: absolute;
-    top: 1.5rem;
+    bottom: 1.5rem;
     right: 1.5rem;
+    opacity: .7;
+   
+    @include fontAdjust {
+        display: none;
+    }
 }
 
-// div.landing-bottom-rect-accent {
-//     height: 100px;
-//     width: 400px;
-//     position: absolute;
-//     top: 1.5rem;
-//     right: 1.5rem;
-//     border: 2px solid $white;
-// }
+.cyber-banner {
+    display: none;
+   
+    @include fontAdjust {
+        width: 320px;
+        display: inline-block;
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
 
-// div.rect-accent-left {
-//     height: 100%;
-//     width: 25%;
-//     border-right: 2px solid $white;
-//     float: left;
-// }
-
-// .song-graph {
-//     width: 100%;
-// }
-
-// div.rect-accent-right {
-//     float: right;
-//     width: 75%;
-//     position: relative;
-// }
-
-// .rect-right-img {
-//     position: absolute;
-//     right: 4px;
-//     top: 4px;
-// }
+    @include desktop {
+        top: 1.5rem;
+        width: 400px;
+    }
+}
 
 div.white-black-type-block {
     display: flex;
@@ -216,6 +221,11 @@ div.white-black-type-block {
     position: absolute;
     top: 10rem;
     right: 1.5rem;
+    opacity: 0;
+
+    @include desktop {
+        opacity: 1;
+    }
 }
 
 div.white-black-type-block span {
@@ -260,17 +270,41 @@ div.concealing-shape-white {
 
 .st-george {
     position: absolute;
-    right: -5rem;
-    top: -5rem;
-    width: 80%;
+    right: -5.5rem;
+    top: .5rem;
+    width: 120vw;
+    // min-width: 800px;
     z-index: 5;
+
+    @include fontAdjust {
+        right: -5.5rem;
+        top: 0rem;
+    }
+
+    @include tablet {
+        right: -4.5rem;
+        top: -3rem;
+        width: 100vw;
+    }
+
+    @include desktop {
+        right: -8.75rem;
+        top: -6rem;
+        width: 80vw;
+    }
 }
 
 .gradient-bars {
     position: absolute;
-    top: 50rem;
-    right: 11.25rem;
+    top: 45rem;
+    right: 0rem;
     z-index: 0;
+    width: 100vw;
+
+    @include tablet {
+        width: 80vw;
+        right: 0rem;
+    }
 }
 
 
@@ -310,15 +344,18 @@ div.concealing-shape-red {
 }
 
 .red-bg-img {
-    width: 100%;
+    width: 100vw;
+    min-width: 600px;
     margin: auto;
     position: absolute;
     top: 2rem;
     z-index: 0;
+
 }
 
 .maze-texture {
-    width: 100%;
+    width: 100vw;
+    min-width: 1100px;
     position: absolute;
     top: 135vh;
 }
@@ -328,75 +365,41 @@ div.concealing-shape-red {
     left: 1.5rem;
     top: 5rem;
     z-index: 5;
+    width: 15vw;
+    max-width: 120px;
 }
 
 .top-right-bg-elem {
     position: absolute;
-    right: 1.5rem;
+    right: .5rem;
     top: 21rem;
     z-index: 5;
-}
+    width: 45vw;
+    max-width: 400px;
+    display: none;
 
-
-
-.red-bg-quote {
-    font-family: $serif-one;
-    font-weight: 700;
-    color: $white;
-    width: 800px;
-    height: 380px;
-    font-size: 56px;
-    line-height: 1.5;
-    position: absolute;
-    top: 64rem;
-    right: .5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.red-bg-quote blockquote {
-    position: relative;
-}
-
-.red-bg-quote blockquote::before { 
-    content: open-quote;
-    font-weight: 700;
-    font-size: 128px;
-    position: absolute;
-    left: -4.5rem;
-    top: 3rem;
-    line-height: 0;
-}  
-
-.red-bg-quote blockquote::after { 
-    content: close-quote;
-    font-weight: 700;
-    font-size: 128px;
-    position: absolute;
-    bottom: 2rem;
-    line-height: 0;
-}
-
-.red-bg-quote span {
-    font-size: 44px;
-}
-
-.red-bg-quote span::before {
-    content: '\2014';
-    margin-right: 16px;
-}
-
-.cyber-texture-left {
-    position: absolute;
-    left: 1.5rem;
-    bottom: 40rem;
+    // @include tablet {
+    //     display: inline-block;
+    // }
 }
 
 .cyber-texture-right {
     position: absolute;
-    right: 6rem;
-    top: 36rem;
+    right: 1rem;
+    top: 22rem;
+    width: 30vw;
+    max-width: 320px;
+
+    @include fontAdjust {
+        // top: 160vw;
+        
+    }
+
+    @include tablet {
+        top: 22rem;
+        right: 1rem;
+        // width: 320px;
+    }
 }
 
 .down-arrow-container {
@@ -428,6 +431,79 @@ div.concealing-shape-red {
 .mobile-landing-graphic {
     width: 100%;
     overflow: hidden;
+}
+
+
+/****** SECTION HEADER STYLES ******/
+
+.section-header {
+    width: 100%;
+    height: 72px;
+    position: relative;
+    margin-bottom: 3rem;
+    transition: margin-bottom .2s;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    @include desktop {
+        margin-bottom: 5rem;
+    }
+}
+
+.section-header.no-margin {
+    margin-bottom: 0;
+}
+
+.header-strikethrough {
+    width: 5%;
+    height: 2px;
+    background-color: $black;
+
+}
+
+.header-strikethrough:last-of-type {
+    flex-grow: 1;
+}
+
+.section-header span {
+    font-family: $serif-one;
+    font-size: 15vw;
+    line-height: 0;
+
+    @include fontAdjust {
+        font-size: 80px;
+    }
+
+    @include desktop {
+        font-size: 104px;
+    }
+}
+
+.header-accent {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-25px);
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-accent-circle {
+    width: 14px;
+    height: 14px;
+    border: 2px solid $black;
+    border-radius: 50%;
+}
+
+.header-accent span {
+    font-family: $sans-serif;
+    font-size: 16px;
 }
 
 

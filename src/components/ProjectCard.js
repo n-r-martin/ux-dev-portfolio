@@ -1,9 +1,7 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons/lib";
-import { FiGithub, FiExternalLink, FiMap } from "react-icons/fi";
-import { DiReact, DiMongodb, DiNodejsSmall, DiJsBadge } from "react-icons/di";
-import { IconName } from "react-icons/fa";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { SiNodedotjs, SiLeaflet, SiMongodb, SiReact, SiJavascript, SiExpress, SiAdobexd } from "react-icons/si";
 import useIntersection from "../utils/intersectionObserver";
 import Marquee from "react-fast-marquee";
@@ -47,11 +45,11 @@ function ProjectCard(props) {
         <li key={index} className='listitem'>{role}</li>
       ))
 
+
     return (
         <article ref={ref} id={props.id} className={"project-card " + raisedClass}>
         <div className="card-circle-accent"></div>
         <div className="card-circle-shadow"></div>
-        {/* style={{backgroundImage: 'url(' + require('./images/sword.png') + ')'}} */}
         <div className="project-card-img-container"  style={{ backgroundImage: `url("images${projectImg}")` }}></div>  
 
         <div className="project-card-text-and-ui">

@@ -1,19 +1,36 @@
 section#project-cards {
-    padding: 4rem 3.75% 20rem;
+    padding: 8rem 3.75% 20rem;
     position: relative;
     background-color: $white;
     border-top: 2px solid $black;
     box-shadow: 0px -24px 16px rgba(0, 0, 0, 0.1);
+    transition: padding-top .2s;
+
+    @include tablet {
+        padding: 8rem 6rem;
+    }
 
     @include desktop {
-        padding: 26rem 0 20rem 4rem;
+        padding: 12rem 0 20rem 6rem;
     }
 }
 
 div#work {
     position: absolute;
-    top: 10rem;
+    top: 4rem;
     visibility: hidden;
+}
+
+#work-header {
+    font-family: $serif-one;
+    position: absolute;
+    font-size: 40vw;
+    z-index: 5;
+    top: 0;
+    left: -2rem;
+    color: $accent-red;
+    opacity: .075;
+    display: none;
 }
 
 .work-word-square {
@@ -23,12 +40,14 @@ div#work {
     left: 12rem;
     z-index: 0;
     opacity: .075;
+    display: none;
 
     @include tablet {
         width: 960px;
         position: absolute;
         top: 12rem;
         left: -6rem;
+        display: inline-block;
     }
 
     @include desktop {
@@ -57,6 +76,7 @@ article.project-card {
     position: relative;
     box-shadow: $long-shadow;
     transition: width .3s, height .3s, box-shadow .3s, transform .3s;
+    z-index: 10;
 
 
     @include tablet {
@@ -72,8 +92,12 @@ article.project-card {
 }
 
 article.project-card.raised {
-    box-shadow: $raised-shadow;
+    box-shadow: $raised-shadow-mobile;
     transform: translate(1%, -1%);
+
+    @include tablet {
+        box-shadow: $raised-shadow-tablet;
+    }
 }
 
 article.project-card:not(:first-of-type) {

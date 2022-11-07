@@ -3,13 +3,13 @@
 /***** HEADER *****/
 
 header {
-    background-color: $white;
+    background: none;
     height: $headerHeight;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 10000;
-    transition: height .3s, top .4s ease-in-out, box-shadow .3s;
+    transition: background-color .3s, height .3s, top .4s ease-in-out, box-shadow .3s;
 }
 
 header a {
@@ -19,6 +19,7 @@ header a {
 .header-up {
     top: $headerHide;
     border-bottom: 2px solid $black;
+    background-color: $white;
   }
 
 // adjusting header style based on scroll position
@@ -26,6 +27,7 @@ html:not([data-scroll='0']) header.header-down {
       border-bottom: 2px solid $black;
       box-shadow: $full-width-shadow-subtle;
       height: 4rem;
+      background-color: $white;
 }
 
 div.header-content-container {

@@ -3,6 +3,8 @@ import peaceSign from "../images/peace-sign.svg";
 import { IconContext } from 'react-icons/lib';
 import { FiMail } from "react-icons/fi";
 import bgGraphic from "../images/footer-bg-graphic.svg";
+import swordRose from "../images/sword-rose.svg";
+import MediaLinks from './MediaLinks';
 
 
 function Footer() {
@@ -10,8 +12,8 @@ function Footer() {
     <>
     <footer>
       <div className='footer-content'>
-            <div className="section-header-large">
-                <p><span className='bold white'>say hello</span></p>
+            <div className="footer-heading">
+                <span className='bold white'>say hello</span>
             </div>
 
             <p>I'm always on the lookout for opportunities to work on exciting new projects with friendly, collborative minds!</p>
@@ -26,6 +28,9 @@ function Footer() {
             </div>
         </div>
         <img className='footer-bg-graphic spin-counter-clockwise' src={bgGraphic} alt="" />
+        <img className='sword-rose' src={swordRose} alt="" />
+
+        <MediaLinks />
     </footer>
     </>
   );

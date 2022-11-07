@@ -1,7 +1,7 @@
 footer {
     background-color: $accent-red;
     min-height: 80vh;
-    margin-top: 30vh;
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,13 +20,17 @@ footer {
     justify-content: center;
     padding: 0px;
     position: relative;
-    padding-left: 8rem;
+    padding-left: 4rem;
 }
 
 .footer-content {
     position: relative;
-    margin: 0 4rem;
+    margin: 0 2rem;
     z-index: 9999;
+
+    @include desktop {
+        margin: 0 4rem;
+    }
 }
 
 .footer-content > .hero-text-block {
@@ -36,6 +40,17 @@ footer {
 
 .footer-content > .hero-text-block p {
     display: inline;
+}
+
+.footer-heading span {
+    font-family: $serif-one;
+    font-size: 16.5vw;
+    line-height: 24.5vw;
+
+    @include fontAdjust {
+        font-size: 64px;
+        line-height: 1.5;
+    }
 }
 
 .footer-content > .hero-text-block svg {
@@ -52,7 +67,7 @@ a.white {
 }
 
 a.white:hover {
-    color: $black;
+    color: $soft-black;
 }
 
 img.footer-bg-graphic {
@@ -65,5 +80,38 @@ img.footer-bg-graphic {
 
     @include desktop {
         opacity: 1;
+    }
+}
+
+img.sword-rose {
+    width: 500px;
+    position: absolute;
+    top: 6rem;
+    right: -4rem;
+    opacity: .2;
+    transition: opacity .3s;
+
+    @include tablet {
+        width: 60vw;
+        opacity: .7;
+    }
+
+    @include desktop {
+        width: 640px;
+        position: absolute;
+        top: 6rem;
+        right: -4rem;
+        opacity: 1;
+    }
+}
+
+footer .media-links-container {
+    display: inline-block;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+
+    @include tablet {
+        display: none;
     }
 }

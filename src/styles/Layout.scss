@@ -5,6 +5,7 @@ html {
 body {
     color: $black;
     padding-top: 0;
+    overflow-x: hidden;
 }
 
 main {
@@ -13,17 +14,6 @@ main {
     margin: auto;
     transition: margin .3s;
 
-    @include tablet {
-        width: 85%;
-        margin: 0;
-        margin-left: 4rem;
-    }
-
-    @include desktop {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
 }
 
 main.no-padding {
@@ -32,8 +22,36 @@ main.no-padding {
 }
 
 main.project-content {
-    margin-top: 8rem
+    margin-top: 8rem;
+    position: relative;
 }
+
+.external-link-ui {
+    position: fixed;
+    top: 13rem;
+    transform: translateX(-140%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: $white;
+    border-right: 1px solid $medium-grey;
+    padding: 0.25rem 1rem .15rem;
+    align-items: baseline;
+    // opacity: .8;
+}
+
+.project-external-icons {
+    color: $medium-grey;
+    transition: color .3s;
+}
+
+.project-external-icons:hover {
+    color: $accent-red;
+}
+
+// .external-link-ui:hover {
+//     opacity: 1;
+// }
 
 
 /***** UNDER CONSTRUCTION PAGE STYLES *****/
@@ -68,7 +86,7 @@ div#under-construction-message-container h3 {
 main.project-content {
     width: 92.5%;
     margin: auto;
-    padding: 3rem 0;
+    padding: 8rem 0;
     max-width: 680px;
     transition: width .3s;
 
@@ -76,12 +94,21 @@ main.project-content {
         width: 80%;
         margin: 0;
         margin-left: 4rem;
+        padding-top: 12rem;
     }
 
     @include desktop {
         width: 80%;
         margin: $headerHeight auto 0;
+        padding-top: 8rem;
     }
+}
+
+.project-header-links {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: .5rem 0;
 }
 
 section.project-heading {

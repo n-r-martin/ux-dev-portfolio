@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Pivot as Hamburger } from 'hamburger-react'
+import { Pivot as Hamburger } from 'hamburger-react';
+import ScrollToTop from "../utils/scrollToTop";
 import { Link } from "react-router-dom";
 
 import $ from 'jquery';

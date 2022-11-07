@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import Resume from '../docs/nicholasMartin-resume.pdf';
 import { IconContext } from "react-icons/lib";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
@@ -8,8 +8,8 @@ function MobileNav () {
     return (
       <section className="mobile-menu">
           <ul>
-            <li><Link to="/#work">work</Link></li>
-            <li><Link to='/#about'>about</Link></li>
+            <li><HashLink to="/#work">work</HashLink></li>
+            <li><HashLink to='/#about'>about</HashLink></li>
             <li><a href={Resume} target="_blank" rel="noreferrer">r&eacute;sum&eacute;</a></li>
           </ul>
 

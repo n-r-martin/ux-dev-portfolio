@@ -2,7 +2,8 @@
 
 .desktop-bg-outer-container {
     position: absolute;
-    width: 80%;
+    width: 80vw;
+    min-width: 600px;
     top: -25.8vw;
     left: 50%;
     transform: translate(-50%, 50%);
