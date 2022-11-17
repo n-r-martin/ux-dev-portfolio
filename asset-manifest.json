@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ux-dev-portfolio/static/css/main.d7903844.css",
-    "main.js": "/ux-dev-portfolio/static/js/main.00a54675.js",
+    "main.js": "/ux-dev-portfolio/static/js/main.cae9f957.js",
     "static/js/787.c1e23986.chunk.js": "/ux-dev-portfolio/static/js/787.c1e23986.chunk.js",
     "static/media/nicholasMartin-resume.pdf": "/ux-dev-portfolio/static/media/nicholasMartin-resume.8ccc03b124f054bfbda8.pdf",
     "static/media/st-george.png": "/ux-dev-portfolio/static/media/st-george.14aa13b699e38ff89421.png",
@@ -36,11 +36,11 @@
     "index.html": "/ux-dev-portfolio/index.html",
     "static/media/error-korean.svg": "/ux-dev-portfolio/static/media/error-korean.1de56aae7a2b7337ff789ecbf773335a.svg",
     "main.d7903844.css.map": "/ux-dev-portfolio/static/css/main.d7903844.css.map",
-    "main.00a54675.js.map": "/ux-dev-portfolio/static/js/main.00a54675.js.map",
+    "main.cae9f957.js.map": "/ux-dev-portfolio/static/js/main.cae9f957.js.map",
     "787.c1e23986.chunk.js.map": "/ux-dev-portfolio/static/js/787.c1e23986.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d7903844.css",
-    "static/js/main.00a54675.js"
+    "static/js/main.cae9f957.js"
   ]
 }
