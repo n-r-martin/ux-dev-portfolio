@@ -4,7 +4,6 @@ import projectData from '../../data/projects.json'
 import ProjectCard from '../ProjectCard';
 import { IconContext } from 'react-icons/lib';
 import { FiArrowDown } from "react-icons/fi";
-import GlitchClip from 'react-glitch-effect/core/GlitchClip';
 
 import spacewave from "../../images/spacewave.svg";
 import calculation from "../../images/calculation.svg";
@@ -80,24 +79,24 @@ useEffect(() => {
     $('.maze-texture').css({'transform' : 'translateY(' + -scrollTop * 1 + 'px)'});
   });
   
-  useEffect(() => {
-    const timer = setInterval(() => {
-      toggleVisibility()
-    }, glitchTimer);
-    return () => {
-      clearInterval(timer)
-    };
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     toggleVisibility()
+  //   }, glitchTimer);
+  //   return () => {
+  //     clearInterval(timer)
+  //   };
+  // }, []);
 
 
-  const toggleVisibility = () => {
-    const glitchStrings = document.querySelectorAll(".glitch");
+  // const toggleVisibility = () => {
+  //   const glitchStrings = document.querySelectorAll(".glitch");
     
-    for (let i = 0; i < glitchStrings.length; i++) {
-      const element = glitchStrings[i];
-      element.classList.toggle('visible');
-    }
-  }
+  //   for (let i = 0; i < glitchStrings.length; i++) {
+  //     const element = glitchStrings[i];
+  //     element.classList.toggle('visible');
+  //   }
+  // }
 
 
 
@@ -139,12 +138,8 @@ useEffect(() => {
               <div className='hero-text-first-row'>
                 <span>I like to do the </span>
                 <div className='glitch-text-container'>
-                  <GlitchClip className="glitch visible" duration={glitchTimer}>
                     <span className='bold uppercase'>Design</span>
-                    </GlitchClip>
-                  <GlitchClip className="glitch" duration={glitchTimer}>
                     <span className='bold uppercase'>Development</span>
-                  </GlitchClip>
                 </div>
               </div>
               <div className='hero-text-second-row'>
