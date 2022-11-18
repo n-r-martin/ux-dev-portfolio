@@ -18,7 +18,6 @@ export default function PortfolioContainer() {
           <Routes>
             <Route path="*" element={<FourOhFour />} />
             <Route path="/" element={<Home/>} />
-            <Route path="ux-dev-portfolio" element={<Home/>} />
             <Route path="work/:project" element={<Project/>} />
           </Routes>
         </ScrollToTop>
