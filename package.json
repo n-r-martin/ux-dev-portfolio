@@ -2,7 +2,7 @@
   "name": "nick-martin-ux-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "http://n-r-martin.github.io/ux-dev-portfolio/",
   "dependencies": {
     "@babel/runtime": "^7.18.3",
     "@testing-library/jest-dom": "^5.16.4",
